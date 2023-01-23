@@ -2,9 +2,9 @@ import React from 'react'
 
 const contact = () => {
   return (
-    <div name='contact' className='w-full h-screen bg-gradient-to-b from-background2 to-background py-4 px-20 text-white'>
+    <div name='contact' className='w-full h-fit bg-gradient-to-b from-background2 to-background lg:p-20 md:p-10 sm:p-3 px-20 text-white'>
 
-        <div className='flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full'>
+        <div className='flex flex-col p-4 justify-center max-w-screen-lg mx-auto'>
             <div className=' pb-8'>
                 <p className='text-4xl font-bold inline border-b-4 border-grey'>Contact</p>
                 <p className='py-6'>Submit the form below to get in touch with me</p>

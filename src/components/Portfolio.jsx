@@ -46,7 +46,7 @@ const Portfolio = () => {
 
 
   return (
-    <div name="portfolio" className='bg-background w-full text-white md:h-screen flex align-middle lg:p-20 md:p-10 sm:p-3'>
+    <div name="portfolio" className='bg-background w-full text-white flex align-middle lg:p-20 md:p-10 sm:p-3'>
         
             
             <div className=' max-w-screen-lg  mx-auto flex flex-col justify-center w-full h-full'>

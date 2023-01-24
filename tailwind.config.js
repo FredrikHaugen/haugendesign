@@ -1,3 +1,5 @@
+const colors = require("tailwindcss/colors");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -16,11 +18,28 @@ module.exports = {
       amber: '#f59e0b',
       orange: '#ff9800',
       yellow: '#ffeb3b',
-      green: '#28a745',
       red: '#e74c3c',
       violet: '#c4b5fd',
       white: '#ffffff',
-      amberlight: '#fcd34d'
+      amberlight: '#fcd34d',
+      current: "currentColor",
+      slate: colors.slate,
+      gray: colors.gray,
+      neutral: colors.neutral,
+      stone: colors.stone,
+      lime: colors.lime,
+      emerald: colors.emerald,
+      teal: colors.teal,
+      cyan: colors.cyan,
+      sky: colors.sky,
+      blue: colors.blue,
+      indigo: colors.indigo,
+      purple: colors.purple,
+      fuchsia: colors.fuchsia,
+      pink: colors.pink,
+      rose: colors.rose,
+      green: colors.green,
+      topColor: '#C62368',
     },
     screens: {
       sm: '640px',
@@ -38,8 +57,11 @@ module.exports = {
       },
 
       spacing: {
-        '20': '5rem'
+        '20': '5rem',
       },
+      backgroundImages: {
+        'hero': "url('/assets/bg/waveBot.png')",
+      }
     },
   },
   plugins: [],

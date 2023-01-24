@@ -120,8 +120,8 @@ const Experience = () => {
 
 
   return (
-    <div name='experience' className='bg-gradient-to-b from-background to-background2 w-full lg:p-20 md:p-10 sm:p-3'>
-
+    <div  className='bg-gradient-to-b -mt-1 from-background to-background2 w-full lg:p-20 md:p-10 sm:p-3'>
+      <div name='experience' className=' pt-24'>
       <div className='max-w-screen mx-auto lg:p-4 md:p-2 sm:p-1 flex flex-col justify-center w-full text-white'>
 
         <div className='group ml-4'>
@@ -129,7 +129,7 @@ const Experience = () => {
           <p className='py-6 justify-start'>These are the technologies and softwares I have worked with</p>
         </div>
 
-        <div className='w-full grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 text-center py-8 px-12'>
+        <div className='w-full grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 text-center py-8 px-6'>
         
         {
           kunnskap.map(({id, title, icon, style, text}) => (
@@ -148,7 +148,7 @@ const Experience = () => {
         </div>
 
       </div>
-    
+      </div>
     </div>
   )
 }

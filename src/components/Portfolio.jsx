@@ -1,11 +1,11 @@
 import React from 'react'
 
-import Pureen from '../assets/Pureen/pureenPerfume.jpg'
-import Florial from '../assets/Florial/florial2.jpg'
-import Glasses from '../assets/Glasses/GlassesCondensed.jpg'
-import Fjordfiesta from '../assets/Fjordfiesta/Main_inside.jpg'
-import Temp from '../assets/Pureen/pureenPerfume.jpg'
-import Temp2 from '../assets/Pureen/pureenPerfume.jpg'
+import Pureen from '../assets/Pureen/pureenPerfume.webp'
+import Florial from '../assets/Florial/florial2.webp'
+import Glasses from '../assets/Glasses/GlassesCondensed.webp'
+import Fjordfiesta from '../assets/Fjordfiesta/Main_inside.webp'
+import currentPage from '../assets/newPortfolio/CurrentPage.webp'
+import oldPage from '../assets/oldPage/oldPage.webp'
 
 const Portfolio = () => {
 
@@ -32,13 +32,15 @@ const Portfolio = () => {
         },
         {
             id: 5,
-            src: Temp,
-            github: <a target='_blank' rel='noreferrer' href='https://www.github.com'>github</a>
+            src: currentPage,
+            github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/haugendesign'>github</a>,
+            page: <a target='_blank' rel='noreferrer' href='https://www.haugendesign.net'>Demo</a>
         },
         {
             id: 6,
-            src: Temp2,
-            github: <a target='_blank' rel='noreferrer' href='https://www.github.com'>github</a>
+            src: oldPage,
+            github: <a target='_blank' rel='noreferrer' href='https://www.github.com'>github</a>,
+            page: <a target='_blank' rel='noreferrer' href='https://old-portfolio-2565e.web.app'>Demo</a>
         },
     ]
 
@@ -61,11 +63,11 @@ const Portfolio = () => {
                 <div className='grid sm:grid-cols-2 ps:grid-cols-3 gap-4 p-12 sm:p-3 justify-center'>
 
                 {
-                    porttfolios.map(({behance, github, id, src}) => (
+                    porttfolios.map(({behance, github, id, src, page}) => (
                         <div key={id} className=' shadow-box shadow-black hover:shadow-lg rounded-lg duration-300 hover:scale-105'>
-                        <img src={src} alt="pureen" className=' rounded-t-lg '/>
+                        <img src={src} alt="portfolioImage" className=' rounded-t-lg '/>
                         <div className=' flex items-center justify-center'>
-                            <button className=' w-1/2 px-6 py-3 m-4 duration-300 hover:scale-105 hover:text-amber hover:bg-background2 rounded-md'>Demo</button>
+                            <button className=' w-1/2 px-6 py-3 m-4 duration-300 hover:scale-105 hover:text-amber hover:bg-background2 rounded-md'>{page}</button>
                             <button className=' w-1/2 px-6 py-3 m-4 duration-300 hover:scale-105 hover:text-amber hover:bg-background2 rounded-md'>{github}{behance}</button>
                         </div>
                     </div>

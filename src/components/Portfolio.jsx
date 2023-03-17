@@ -99,7 +99,7 @@ const Portfolio = () => {
                                 <a href={imglink} target='_blank' rel='noreferrer'><img src={src} alt="portfolioImage" /></a>
                                 <div className=' flex items-center justify-center'>
                                     <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{page}{picture}</button>
-                                    <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 lg:md:hover:text-amber sm:hover:text-white lg:md:hover:bg-background2 sm:shadow-black rounded-md'>{github}{behance}</button>
+                                    <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{github}{behance}</button>
                                 </div>
                             </div>
                         ))

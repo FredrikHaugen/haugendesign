@@ -13,6 +13,7 @@ import { SiAdobephotoshop } from 'react-icons/si'
 import { SiAdobepremierepro } from 'react-icons/si'
 import { SiAdobexd } from 'react-icons/si'
 import { SiFigma } from 'react-icons/si'
+import { SiFlutter } from 'react-icons/si'
 
 const Experience = () => {
 
@@ -112,6 +113,13 @@ const Experience = () => {
       id: 14,
       title: 'Figma',
       icon: <SiFigma className='w-20 h-auto mx-auto text-amber' />,
+      style: 'text-transform: Capitalize; !important',
+      text: 'Figma is a collaborative interface design tool. It is used to create, prototype, and collaborate on UI designs for web, mobile, and other digital products.'
+    },
+    {
+      id: 15,
+      title: 'Flutter',
+      icon: <SiFlutter className='w-20 h-auto mx-auto text-amber' />,
       style: 'text-transform: Capitalize; !important',
       text: 'Figma is a collaborative interface design tool. It is used to create, prototype, and collaborate on UI designs for web, mobile, and other digital products.'
     }

@@ -6,6 +6,8 @@ import Glasses from '../assets/Glasses/GlassesCondensed.webp'
 import Fjordfiesta from '../assets/Fjordfiesta/Main_inside.webp'
 import currentPage from '../assets/newPortfolio/currentPortfolio.webp'
 import oldPage from '../assets/oldPortfolio/oldPortfolio.webp'
+import unsplashPortfolio from '../assets/unsplashPortfolio/Kazuo_Ota.webp'
+import moody from '../assets/moody/moody.webp'
 
 const Portfolio = () => {
 
@@ -58,6 +60,20 @@ const Portfolio = () => {
             name: 'old portfolio',
             imglink: 'https://old-portfolio-2565e.web.app'
         },
+        {
+            id: 7,
+            src: unsplashPortfolio,
+            github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/unsplashPortfolio'>GitHub</a>,
+            page: <a target='_blank' rel='noreferrer' href='https://test-unsplash-portfolio.web.app/'>Demo</a>,
+            name: 'Kazuo Ota portfolio',
+            imglink: 'https://test-unsplash-portfolio.web.app/'
+        },
+        {
+            id: 7,
+            src: moody,
+            name: 'Mood-logger app (ongoing)',
+            imglink: 'moody'
+        }
     ]
 
 
@@ -76,14 +92,14 @@ const Portfolio = () => {
                 <div className='grid sm:grid-cols-2 ps:grid-cols-3 gap-4 p-12 sm:p-3 justify-center'>
                     {
                         portfolios.map(({ behance, github, id, src, page, picture, name, imglink }) => (
-                            <div key={id} className='shadow-box shadow-black hover:drop-shadow-2xl rounded-lg duration-300 hover:scale-105'>
+                            <div key={id} className='shadow-box shadow-black hover:drop-shadow-2xl rounded-lg duration-300 lg:hover:scale-105 md:sm:hover:scale-100'>
                                 <div>
                                     <p className='text-xl text-center capitalize py-2'>{name}</p>
                                 </div>
                                 <a href={imglink} target='_blank' rel='noreferrer'><img src={src} alt="portfolioImage" /></a>
                                 <div className=' flex items-center justify-center'>
-                                    <button className=' w-1/2 px-6 py-3 m-4 duration-300 hover:scale-105 hover:text-amber hover:bg-background2 rounded-md'>{page}{picture}</button>
-                                    <button className=' w-1/2 px-6 py-3 m-4 duration-300 hover:scale-105 hover:text-amber hover:bg-background2 rounded-md'>{github}{behance}</button>
+                                    <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{page}{picture}</button>
+                                    <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 lg:md:hover:text-amber sm:hover:text-white lg:md:hover:bg-background2 sm:shadow-black rounded-md'>{github}{behance}</button>
                                 </div>
                             </div>
                         ))

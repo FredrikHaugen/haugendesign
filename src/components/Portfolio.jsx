@@ -1,5 +1,6 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
 import Pureen from '../assets/Pureen/pureenPerfume.webp'
 import Florial from '../assets/Florial/florial2.webp'
 import Glasses from '../assets/Glasses/GlassesCondensed.webp'
@@ -8,8 +9,26 @@ import currentPage from '../assets/newPortfolio/currentPortfolio.webp'
 import oldPage from '../assets/oldPortfolio/oldPortfolio.webp'
 import unsplashPortfolio from '../assets/unsplashPortfolio/Kazuo_Ota.webp'
 import moody from '../assets/moody/moody.webp'
+import iMessage from '../assets/iMessage/imessage.webp'
 
 const Portfolio = () => {
+
+    const [open, setOpen] = useState(false);
+
+    const handleClickOpen = (id) => {
+        setSelectedItem(portfolios.find(item => item.id === id));
+        setOpen(true);
+    };
+
+
+    const handleClose = () => {
+        setOpen(false);
+    };
+
+    const [selectedItem, setSelectedItem] = useState(null);
+
+
+
 
     const portfolios = [
         {
@@ -69,7 +88,15 @@ const Portfolio = () => {
             imglink: 'https://test-unsplash-portfolio.web.app/'
         },
         {
-            id: 7,
+            id: 8,
+            src: iMessage,
+            github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/imessage_chatbot_openai'>GitHub</a>,
+            page: <a target='_blank' rel='noreferrer' href='https://www.google.com/'>IDK</a>,
+            name: 'OpenAI + iMessage',
+            imglink: 'https://test-unsplash-portfolio.web.app/'
+        },
+        {
+            id: 9,
             src: moody,
             name: 'Mood-logger app (ongoing)',
             imglink: 'moody'
@@ -85,7 +112,7 @@ const Portfolio = () => {
 
             <div className=' max-w-screen-lg  mx-auto flex flex-col justify-center w-full h-full'>
                 <div className='pb-8 ml-4'>
-                    <a href='www.google.com'><p className='text-4xl font-bold inline border-b-4 border-grey'>Portfolio</p></a>
+                    <p className='text-4xl font-bold inline border-b-4 border-grey'>Portfolio</p>
                     <p className='py-6 '>Here's some of my previous work</p>
                 </div>
 
@@ -96,7 +123,9 @@ const Portfolio = () => {
                                 <div>
                                     <p className='text-xl text-center capitalize py-2'>{name}</p>
                                 </div>
-                                <a href={imglink} target='_blank' rel='noreferrer'><img src={src} alt="portfolioImage" /></a>
+                                <Button onClick={() => handleClickOpen(id)}><img src={src} alt="portfolioImage" /></Button>
+
+
                                 <div className=' flex items-center justify-center'>
                                     <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{page}{picture}</button>
                                     <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{github}{behance}</button>
@@ -106,6 +135,62 @@ const Portfolio = () => {
                     }
                 </div>
             </div>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                BackdropComponent={null}
+                PaperProps={{
+                    sx: {
+                        backgroundColor: 'white',
+                        boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.3)',
+                        border: '1px solid black',
+                        position: 'relative' // add this to position the button correctly
+                    }
+                }}
+                sx={{
+                    position: 'fixed',
+                    zIndex: 1300,
+                    top: 0,
+                    left: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                    backdropFilter: 'blur(3px)'
+                }}
+            >
+                {/* Add a button with an X icon to close the dialog */}
+                <button
+                    onClick={handleClose}
+                    style={{
+                        position: 'absolute',
+                        top: '5px',
+                        right: '5px',
+                        padding: '5px',
+                        cursor: 'pointer',
+                        backgroundColor: 'transparent',
+                        border: 'none'
+                    }}
+                >
+                    <svg className=' hover:scale-105 ease-in-out' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path fill="none" d="M0 0h24v24H0z" />
+                        <path stroke="#222" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+
+                </button>
+
+                {/* Add the contents of the dialog */}
+                {selectedItem && (
+                    <div key={selectedItem.id} className=''>
+                        <div>
+                            <p className='text-xl text-center capitalize py-2'>{selectedItem.name}</p>
+                        </div>
+                        <img src={selectedItem.src} alt="portfolioImage" className=' w-[80vh]' />
+                        <div className=' flex items-center justify-center'>
+                            <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{selectedItem.page}{selectedItem.picture}</button>
+                            <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{selectedItem.github}{selectedItem.behance}</button>
+                        </div>
+                    </div>
+                )}
+            </Dialog>
+
         </div>
     )
 }

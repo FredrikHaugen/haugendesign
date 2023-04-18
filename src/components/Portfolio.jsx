@@ -2,14 +2,25 @@ import React, { useState } from 'react'
 import Button from '@mui/material/Button';
 import Dialog from '@mui/material/Dialog';
 import Pureen from '../assets/Pureen/pureenPerfume.webp'
+import Pureen2 from '../assets/Pureen/EyeShadow.webp'
+import Pureen3 from '../assets/Pureen/poster1.webp'
+import Pureen4 from '../assets/Pureen/poster2.webp'
+import Pureen5 from '../assets/Pureen/poster3.webp'
 import Florial from '../assets/Florial/florial2.webp'
+import LogoFlorial from '../assets/Florial/logo.webp'
+import FlorPro from '../assets/Florial/process.webp'
 import Glasses from '../assets/Glasses/GlassesCondensed.webp'
+import Glasses2 from '../assets/Glasses/Glasses.webp'
 import Fjordfiesta from '../assets/Fjordfiesta/Main_inside.webp'
+import Fjordfiesta2 from '../assets/Fjordfiesta/Main_outside.webp'
+import Fjordfiesta3 from '../assets/Fjordfiesta/strokes_inside.webp'
+import Fjordfiesta4 from '../assets/Fjordfiesta/Strokes_outside.webp'
 import currentPage from '../assets/newPortfolio/currentPortfolio.webp'
 import oldPage from '../assets/oldPortfolio/oldPortfolio.webp'
 import unsplashPortfolio from '../assets/unsplashPortfolio/Kazuo_Ota.webp'
 import moody from '../assets/moody/moody.webp'
 import iMessage from '../assets/iMessage/imessage.webp'
+import iMessage2 from '../assets/iMessage/iMessage2.webp'
 
 const Portfolio = () => {
 
@@ -34,6 +45,14 @@ const Portfolio = () => {
         {
             id: 1,
             src: Pureen,
+            dialogImg1: Pureen2,
+            dialogImg2: Pureen3,
+            dialogImg3: Pureen4,
+            dialogImg4: Pureen5,
+            dialogImg5: '',
+            dialogText1: 'This whole project started with Pureen, an upcoming German cosmetic brand, reaching out in the start-up phase in early March 2021. They wanted a complete brand design and style guide as well as a couple of product renders. Below are a showcase of their brand design.',
+            dialogText2: 'After the brand experienced some initial growth and interest from the public, they wanted to launch a secondary series of fragrances and eyeshadow. They then reached out about designing these products, model them in 3D and use them as the products in posters for advertisement purposes.',
+            dialogText3: 'Photography by: Alexander Krivbitskiy',
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/124386075/Pureen-Brand-Product-Design'>Behance</a>,
             picture: <a target='_blank' rel='noreferrer' href="https://unsplash.com/collections/_zTCpaNN1iw/pureen">Unsplash</a>,
             name: 'pureen cosmetics',
@@ -42,6 +61,11 @@ const Portfolio = () => {
         {
             id: 2,
             src: Florial,
+            dialogImg1: FlorPro,
+            dialogImg2: LogoFlorial,
+            dialogText1: 'The logo ended up being a happy accident while vectorising a flower petal with some geometric forms. In the beginning, it was a very detailed flower, and after gradually removing lines and gradients, it ended up looking like a great combination of modern pastel and retro colours in a warm and pleasant looking logo. ',
+            dialogText2: 'The logo and first custom perfume bottle were designed back in February 2021. The initial launch of the company went very well and they decided to launch a second scent. This time they wanted a more unique bottle. Together we made a few mockups and finally decided on the design shown below.',
+            dialogText3: '',
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/115300163/Florial-Logo-design-product-mockup'>Behance</a>,
             picture: <a target='_blank' rel='noreferrer' href="https://unsplash.com/collections/z9v_7HLyOrg/florial">Unsplash</a>,
             name: 'florial perfume',
@@ -50,22 +74,40 @@ const Portfolio = () => {
         {
             id: 3,
             src: Glasses,
+            dialogImg1: Glasses2,
+            dialogText1: 'A project just for me, with inspiration from previous designs I have created. The drinking glass formed like this have for some reason always been in my head as something I want to have so I decided that the best way I can create it was to make my own render.',
+            dialogText2: '',
+            dialogText3: 'The model is uploaded for free to sketchfab and below is a link to the download if you want to use it for your own projects.',
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/162000881/Modern-Glass'>Behance</a>,
-            picture: <a target='_blank' rel='noreferrer' href="https://unsplash.com/collections/psSKbBb3yKk/glasses">Unsplash</a>,
+            picture: <a target='_blank' rel='noreferrer' href="https://sketchfab.com/3d-models/drinking-glass-bfe2995de95c4bb2a730501c82cb09ad">Sketchfab</a>,
             name: 'modern drinking glass',
             imglink: 'https://www.behance.net/gallery/162000881/Modern-Glass'
         },
         {
             id: 4,
             src: Fjordfiesta,
+            dialogImg1: Fjordfiesta2,
+            dialogImg2: Fjordfiesta3,
+            dialogImg3: Fjordfiesta4,
+            dialogText1: 'This project was a simple render of a sofa made by a Norwegian furniture company called Fjordfiesta.',
+            dialogText2: 'The first part of this project was to design and model the sofa and place it in a suiting environment. No materials were added yet and I focused mostly on the design, and also the placement of the camera for the best images.',
+            dialogText3: '',
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/141313091/Fjordfiesta-1001-AX-Sofat'>Behance</a>,
-            picture: <a target='_blank' rel='noreferrer' href="https://unsplash.com/collections/-J3J2UOTRtM/fjordfiesta">Unsplash</a>,
+            picture: <a target='_blank' rel='noreferrer' href="https://fjordfiesta.com/products/1001-ax-sofa">Fjordfiesta</a>,
             name: 'fjordfiesta 1001 AX sofa',
             imglink: 'https://www.behance.net/gallery/141313091/Fjordfiesta-1001-AX-Sofat'
         },
         {
             id: 5,
             src: currentPage,
+            dialogImg1: '',
+            dialogImg2: '',
+            dialogImg3: '',
+            dialogImg4: '',
+            dialogImg5: '',
+            dialogText1: 'This whole project started with Pureen, an upcoming German cosmetic brand, reaching out in the start-up phase in early March 2021. They wanted a complete brand design and style guide as well as a couple of product renders. Below are a showcase of their brand design.',
+            dialogText2: 'After the brand experienced some initial growth and interest from the public, they wanted to launch a secondary series of fragrances and eyeshadow. They then reached out about designing these products, model them in 3D and use them as the products in posters for advertisement purposes.',
+            dialogText3: 'Photographs by: Alexander Krivbitskiy',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/haugendesign'>GitHub</a>,
             page: <a target='_blank' rel='noreferrer' href="https://www.haugendesign.net">Demo</a>,
             name: 'current portfolio',
@@ -74,14 +116,30 @@ const Portfolio = () => {
         {
             id: 6,
             src: oldPage,
+            dialogImg1: '',
+            dialogImg2: '',
+            dialogImg3: '',
+            dialogImg4: '',
+            dialogImg5: '',
+            dialogText1: '',
+            dialogText2: '',
+            dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/old-portfolio'>GitHub</a>,
-            page: <a target='_blank' rel='noreferrer' href='https://old-portfolio-2565e.web.app'>Demo</a>,
+            page: <a target='_blank' rel='noreferrer' href='https://my-old-portfolio.web.app'>Demo</a>,
             name: 'old portfolio',
-            imglink: 'https://old-portfolio-2565e.web.app'
+            imglink: 'https://my-old-portfolio.web.app'
         },
         {
             id: 7,
             src: unsplashPortfolio,
+            dialogImg1: '',
+            dialogImg2: '',
+            dialogImg3: '',
+            dialogImg4: '',
+            dialogImg5: '',
+            dialogText1: '',
+            dialogText2: '',
+            dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/unsplashPortfolio'>GitHub</a>,
             page: <a target='_blank' rel='noreferrer' href='https://test-unsplash-portfolio.web.app/'>Demo</a>,
             name: 'Kazuo Ota portfolio',
@@ -90,6 +148,11 @@ const Portfolio = () => {
         {
             id: 8,
             src: iMessage,
+            dialogImg1: iMessage2,
+            dialogImg2: iMessage2,
+            dialogText1: 'This Python program uses the Apple iMessage app and OpenAI to automatically generate responses to messages. It does this by setting up variables and constants to store information about the chat and responses, defining functions to fetch messages and generate responses, and entering a loop to check for new messages and send automated responses.',
+            dialogText2: 'The end result is a tool that allows users to automate the process of responding to iMessage messages by using machine learning to generate pre-written responses. This project could be useful for anyone who wants to save time and effort while still being responsive to their iMessage contacts.',
+            dialogText3: 'This project is available for public use and can be easily cloned free of charge from my GitHub. By cloning the project, users can make use of the automated response capabilities for their own iMessage conversations, saving time and effort in managing message exchanges.',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/imessage_chatbot_openai'>GitHub</a>,
             page: <a target='_blank' rel='noreferrer' href='https://www.google.com/'>IDK</a>,
             name: 'OpenAI + iMessage',
@@ -98,6 +161,14 @@ const Portfolio = () => {
         {
             id: 9,
             src: moody,
+            dialogImg1: '',
+            dialogImg2: '',
+            dialogImg3: '',
+            dialogImg4: '',
+            dialogImg5: '',
+            dialogText1: '',
+            dialogText2: '',
+            dialogText3: '',
             name: 'Mood-logger app (ongoing)',
             imglink: 'moody'
         }
@@ -141,10 +212,18 @@ const Portfolio = () => {
                 BackdropComponent={null}
                 PaperProps={{
                     sx: {
-                        backgroundColor: 'white',
-                        boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.3)',
-                        border: '1px solid black',
-                        position: 'relative' // add this to position the button correctly
+                    backgroundColor: 'transparent',
+                    boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
+                    border: '0px solid transparent',
+                    position: 'relative',
+                    overflow: 'auto',
+                    '-ms-overflow-style': 'none',
+                    scrollbarWidth: 'none',
+                    '&::-webkit-scrollbar': {
+                        display: 'none'
+                    },
+                    '-webkit-overflow-scrolling': 'touch',
+                    width: '80vw' // add this line to set the width
                     }
                 }}
                 sx={{
@@ -155,8 +234,8 @@ const Portfolio = () => {
                     backgroundColor: 'rgba(0, 0, 0, 0.5)',
                     backdropFilter: 'blur(3px)'
                 }}
-            >
-                {/* Add a button with an X icon to close the dialog */}
+                >
+                
                 <button
                     onClick={handleClose}
                     style={{
@@ -171,25 +250,40 @@ const Portfolio = () => {
                 >
                     <svg className=' hover:scale-105 ease-in-out' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                         <path fill="none" d="M0 0h24v24H0z" />
-                        <path stroke="#222" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 6L6 18M6 6l12 12" />
+                        <path stroke="#333" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 6L6 18M6 6l12 12" />
                     </svg>
 
                 </button>
 
-                {/* Add the contents of the dialog */}
                 {selectedItem && (
-                    <div key={selectedItem.id} className=''>
+                    <div key={selectedItem.id} className=' bg-gray-800 border-none'>
                         <div>
-                            <p className='text-xl text-center capitalize py-2'>{selectedItem.name}</p>
+                            <p className='text-3xl text-center capitalize py-2 ' style={{ color: '#ddd' }}>{selectedItem.name}</p>
+
                         </div>
-                        <img src={selectedItem.src} alt="portfolioImage" className=' w-[80vh]' />
+                        <div className='p-2'><p className=' font-light text-secondary'>{selectedItem.dialogText1}</p></div>
+                        <img src={selectedItem.src} alt="portfolioImage" className='p-2' />
+                        <hr className='mx-2' style={{ borderColor: '#ddd' }} />
+                        <img src={selectedItem.dialogImg1} alt="" className='p-2' />
+                        <div className='p-2'><p className=' font-light text-secondary'>{selectedItem.dialogText2}</p></div>
+                        <div className='w-full grid grid-cols-2 gap-4 text-center p-2'>
+                            <img src={selectedItem.dialogImg2} alt="" className='' />
+                            <img src={selectedItem.dialogImg3} alt="" className='' />
+                            <img src={selectedItem.dialogImg4} alt="" className='' />
+                            <img src={selectedItem.dialogImg5} alt="" className='' />
+                            
+                        </div>
+                        <div className='p-2'><p className=' text-center font-light text-secondary'>{selectedItem.dialogText3}</p></div>
+                        
                         <div className=' flex items-center justify-center'>
-                            <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{selectedItem.page}{selectedItem.picture}</button>
-                            <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{selectedItem.github}{selectedItem.behance}</button>
+                            <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber text-[#eee] bg-[rgba(0,0,0,0.2)] hover:bg-background2 rounded-md'>{selectedItem.page}{selectedItem.picture}</button>
+                            <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber text-[#eee] bg-[rgba(0,0,0,0.2)] hover:bg-background2 rounded-md'>{selectedItem.github}{selectedItem.behance}</button>
                         </div>
                     </div>
                 )}
             </Dialog>
+
+            {/* Refactor code!!! */}
 
         </div>
     )

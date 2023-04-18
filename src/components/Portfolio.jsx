@@ -105,9 +105,9 @@ const Portfolio = () => {
             dialogImg3: '',
             dialogImg4: '',
             dialogImg5: '',
-            dialogText1: 'This whole project started with Pureen, an upcoming German cosmetic brand, reaching out in the start-up phase in early March 2021. They wanted a complete brand design and style guide as well as a couple of product renders. Below are a showcase of their brand design.',
-            dialogText2: 'After the brand experienced some initial growth and interest from the public, they wanted to launch a secondary series of fragrances and eyeshadow. They then reached out about designing these products, model them in 3D and use them as the products in posters for advertisement purposes.',
-            dialogText3: 'Photographs by: Alexander Krivbitskiy',
+            dialogText1: '',
+            dialogText2: '',
+            dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/haugendesign'>GitHub</a>,
             page: <a target='_blank' rel='noreferrer' href="https://www.haugendesign.net">Demo</a>,
             name: 'current portfolio',
@@ -263,11 +263,12 @@ const Portfolio = () => {
                         </div>
                         <div className='p-2'><p className=' font-light text-secondary'>{selectedItem.dialogText1}</p></div>
                         <img src={selectedItem.src} alt="portfolioImage" className='p-2' />
-                        <hr className='mx-2' style={{ borderColor: '#ddd' }} />
+                        <hr className='mx-2' style={{ borderColor: 'transparent' }} />
                         <img src={selectedItem.dialogImg1} alt="" className='p-2' />
                         <div className='p-2'><p className=' font-light text-secondary'>{selectedItem.dialogText2}</p></div>
+                        <img src={selectedItem.dialogImg2} alt="" className='p-2' />
+                        <hr className='mx-2' style={{ borderColor: 'transparent' }} />
                         <div className='w-full grid grid-cols-2 gap-4 text-center p-2'>
-                            <img src={selectedItem.dialogImg2} alt="" className='' />
                             <img src={selectedItem.dialogImg3} alt="" className='' />
                             <img src={selectedItem.dialogImg4} alt="" className='' />
                             <img src={selectedItem.dialogImg5} alt="" className='' />

@@ -16,7 +16,9 @@ import Fjordfiesta2 from '../assets/Fjordfiesta/Main_outside.webp'
 import Fjordfiesta3 from '../assets/Fjordfiesta/strokes_inside.webp'
 import Fjordfiesta4 from '../assets/Fjordfiesta/Strokes_outside.webp'
 import currentPage from '../assets/newPortfolio/currentPortfolio.webp'
+import currentPage2 from '../assets/newPortfolio/currentPortfolio2.webp'
 import oldPage from '../assets/oldPortfolio/oldPortfolio.webp'
+import oldPage2 from '../assets/oldPortfolio/oldPortfolio2.webp'
 import unsplashPortfolio from '../assets/unsplashPortfolio/Kazuo_Ota.webp'
 import moody from '../assets/moody/moody.webp'
 import iMessage from '../assets/iMessage/imessage.webp'
@@ -56,7 +58,6 @@ const Portfolio = () => {
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/124386075/Pureen-Brand-Product-Design'>Behance</a>,
             picture: <a target='_blank' rel='noreferrer' href="https://unsplash.com/collections/_zTCpaNN1iw/pureen">Unsplash</a>,
             name: 'pureen cosmetics',
-            imglink: 'https://www.behance.net/gallery/124386075/Pureen-Brand-Product-Design'
         },
         {
             id: 2,
@@ -69,94 +70,85 @@ const Portfolio = () => {
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/115300163/Florial-Logo-design-product-mockup'>Behance</a>,
             picture: <a target='_blank' rel='noreferrer' href="https://unsplash.com/collections/z9v_7HLyOrg/florial">Unsplash</a>,
             name: 'florial perfume',
-            imglink: 'https://www.behance.net/gallery/115300163/Florial-Logo-design-product-mockup'
         },
         {
             id: 3,
             src: Glasses,
-            dialogImg1: Glasses2,
+            dialogImg2: Glasses2,
             dialogText1: 'A project just for me, with inspiration from previous designs I have created. The drinking glass formed like this have for some reason always been in my head as something I want to have so I decided that the best way I can create it was to make my own render.',
-            dialogText2: '',
-            dialogText3: 'The model is uploaded for free to sketchfab and below is a link to the download if you want to use it for your own projects.',
+            dialogText2: 'The model is uploaded for free to sketchfab and below is a link to the download if you want to use it for your own projects.',
+            dialogText3: '',
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/162000881/Modern-Glass'>Behance</a>,
             picture: <a target='_blank' rel='noreferrer' href="https://sketchfab.com/3d-models/drinking-glass-bfe2995de95c4bb2a730501c82cb09ad">Sketchfab</a>,
             name: 'modern drinking glass',
-            imglink: 'https://www.behance.net/gallery/162000881/Modern-Glass'
         },
         {
             id: 4,
             src: Fjordfiesta,
             dialogImg1: Fjordfiesta2,
-            dialogImg2: Fjordfiesta3,
-            dialogImg3: Fjordfiesta4,
+            dialogImg3: Fjordfiesta3,
+            dialogImg4: Fjordfiesta4,
             dialogText1: 'This project was a simple render of a sofa made by a Norwegian furniture company called Fjordfiesta.',
             dialogText2: 'The first part of this project was to design and model the sofa and place it in a suiting environment. No materials were added yet and I focused mostly on the design, and also the placement of the camera for the best images.',
             dialogText3: '',
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/141313091/Fjordfiesta-1001-AX-Sofat'>Behance</a>,
             picture: <a target='_blank' rel='noreferrer' href="https://fjordfiesta.com/products/1001-ax-sofa">Fjordfiesta</a>,
             name: 'fjordfiesta 1001 AX sofa',
-            imglink: 'https://www.behance.net/gallery/141313091/Fjordfiesta-1001-AX-Sofat'
         },
         {
             id: 5,
             src: currentPage,
             dialogImg1: '',
-            dialogImg2: '',
+            dialogImg2: currentPage2,
             dialogImg3: '',
             dialogImg4: '',
             dialogImg5: '',
-            dialogText1: '',
-            dialogText2: '',
+            dialogText1: 'My current portfolio showcases my recent projects, created using ReactJS, a user-friendly JavaScript library, and TailwindCSS, an adaptable CSS framework. These tools help build a visually appealing and easy-to-use website.',
+            dialogText2: 'The portfolio includes smooth scrolling for better navigation and uses lazy-loading for images. This ensures the site loads quickly and provides a seamless experience for visitors, even with slow internet connections.',
             dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/haugendesign'>GitHub</a>,
             page: <a target='_blank' rel='noreferrer' href="https://www.haugendesign.net">Demo</a>,
             name: 'current portfolio',
-            imglink: 'https://www.haugendesign.net'
         },
         {
             id: 6,
             src: oldPage,
             dialogImg1: '',
-            dialogImg2: '',
+            dialogImg2: oldPage2,
             dialogImg3: '',
             dialogImg4: '',
             dialogImg5: '',
-            dialogText1: '',
-            dialogText2: '',
+            dialogText1: 'This project showcases my previous portfolio, which was designed and developed using HTML, SCSS, and JavaScript. The website\'s layout and functionality bear similarities to my current active portfolio, displaying my skills and versatility as a web developer',
+            dialogText2: 'The previous portfolio was structured as a single-page application, featuring a user-friendly navigation bar on the right side for easy access to various sections. Additionally, it incorporated a light and dark mode switch, catering to users preferences and enhancing the overall browsing experience.',
             dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/old-portfolio'>GitHub</a>,
             page: <a target='_blank' rel='noreferrer' href='https://my-old-portfolio.web.app'>Demo</a>,
             name: 'old portfolio',
-            imglink: 'https://my-old-portfolio.web.app'
         },
         {
             id: 7,
             src: unsplashPortfolio,
             dialogImg1: '',
-            dialogImg2: '',
+            dialogImg2: unsplashPortfolio,
             dialogImg3: '',
             dialogImg4: '',
             dialogImg5: '',
-            dialogText1: '',
-            dialogText2: '',
+            dialogText1: 'In this collaborative project, I had the opportunity to work alongside the talented photographer Kazuo Ota. The primary goal was to create a bespoke portfolio that seamlessly aligned with his unique style of photography, showcasing his exceptional work.',
+            dialogText2: 'To achieve this, I adopted a minimalistic design approach, featuring a pristine white background that accentuated the high-contrast colors in both the text and images. This design choice not only provided a clean and modern aesthetic, but it also allowed Kazuo Ota\'s  photography to take the main focus of the viewer.',
             dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/unsplashPortfolio'>GitHub</a>,
             page: <a target='_blank' rel='noreferrer' href='https://test-unsplash-portfolio.web.app/'>Demo</a>,
             name: 'Kazuo Ota portfolio',
-            imglink: 'https://test-unsplash-portfolio.web.app/'
         },
         {
             id: 8,
             src: iMessage,
-            dialogImg1: iMessage2,
             dialogImg2: iMessage2,
             dialogText1: 'This Python program uses the Apple iMessage app and OpenAI to automatically generate responses to messages. It does this by setting up variables and constants to store information about the chat and responses, defining functions to fetch messages and generate responses, and entering a loop to check for new messages and send automated responses.',
             dialogText2: 'The end result is a tool that allows users to automate the process of responding to iMessage messages by using machine learning to generate pre-written responses. This project could be useful for anyone who wants to save time and effort while still being responsive to their iMessage contacts.',
             dialogText3: 'This project is available for public use and can be easily cloned free of charge from my GitHub. By cloning the project, users can make use of the automated response capabilities for their own iMessage conversations, saving time and effort in managing message exchanges.',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/imessage_chatbot_openai'>GitHub</a>,
-            page: <a target='_blank' rel='noreferrer' href='https://www.google.com/'>IDK</a>,
             name: 'OpenAI + iMessage',
-            imglink: 'https://test-unsplash-portfolio.web.app/'
         },
         {
             id: 9,
@@ -166,11 +158,10 @@ const Portfolio = () => {
             dialogImg3: '',
             dialogImg4: '',
             dialogImg5: '',
-            dialogText1: '',
-            dialogText2: '',
-            dialogText3: '',
+            dialogText1: 'Moody is an upcoming app that aims to help users track their mood and daily activities to gain insights into their emotions and behavior patterns. The app will allow users to log their mood and add notes about their daily activities.',
+            dialogText2: 'The goal of Moody is to help users become more self-aware and make positive changes in their lives. By tracking their mood and activities, users will be able to identify triggers that affect their emotional state and develop strategies to manage them.',
+            dialogText3: 'Moody will be designed with a user-friendly interface to make it easy for users to track their mood and activities. Overall, Moody aims to be a powerful tool for anyone who wants to better understand and manage their emotions.',
             name: 'Mood-logger app (ongoing)',
-            imglink: 'moody'
         }
     ]
 

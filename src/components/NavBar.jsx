@@ -40,23 +40,26 @@ const MobileNavLinks = ({ onClick }) => (
 const NavBar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
+  const handleNavClick = () => setNavOpen((open) => !open);
+  const handleLinkClick = () => setNavOpen(false);
+
   return (
-    <div className="flex justify-between items-center w-full h-20 text-primary bg-background fixed px-4 z-10">
+    <nav className="flex justify-between items-center w-full h-20 text-primary bg-background fixed px-4 z-10">
       <div>
         <h1 className="text-3xl ml-2 font-extralight text-amber">haugendesign</h1>
       </div>
 
-      <NavLinks onClick={() => setNavOpen(false)} />
+      <NavLinks onClick={handleLinkClick} />
 
       <div
-        onClick={() => setNavOpen((open) => !open)}
+        onClick={handleNavClick}
         className="cursor-pointer pr-4 z-10 text-gray-400 md:hidden"
       >
         {navOpen ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
 
-      {navOpen && <MobileNavLinks onClick={() => setNavOpen(false)} />}
-    </div>
+      {navOpen && <MobileNavLinks onClick={handleLinkClick} />}
+    </nav>
   );
 };
 

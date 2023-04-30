@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
+import { Button, Dialog } from '@mui/material';
 import Pureen from '../assets/Pureen/pureenPerfume.webp'
 import Pureen2 from '../assets/Pureen/EyeShadow.webp'
 import Pureen3 from '../assets/Pureen/poster1.webp'
@@ -9,8 +8,8 @@ import Pureen5 from '../assets/Pureen/poster3.webp'
 import Florial from '../assets/Florial/florial2.webp'
 import LogoFlorial from '../assets/Florial/logo.webp'
 import FlorPro from '../assets/Florial/process.webp'
-import Glasses from '../assets/Glasses/GlassesCondensed.webp'
-import Glasses2 from '../assets/Glasses/Glasses.webp'
+// import Glasses from '../assets/Glasses/GlassesCondensed.webp'
+// import Glasses2 from '../assets/Glasses/Glasses.webp'
 import Fjordfiesta from '../assets/Fjordfiesta/Main_inside.webp'
 import Fjordfiesta2 from '../assets/Fjordfiesta/Main_outside.webp'
 import Fjordfiesta3 from '../assets/Fjordfiesta/strokes_inside.webp'
@@ -23,22 +22,10 @@ import unsplashPortfolio from '../assets/unsplashPortfolio/Kazuo_Ota.webp'
 import moody from '../assets/moody/moody.webp'
 import iMessage from '../assets/iMessage/imessage.webp'
 import iMessage2 from '../assets/iMessage/iMessage2.webp'
-
-const Portfolio = () => {
-
-    const [open, setOpen] = useState(false);
-
-    const handleClickOpen = (id) => {
-        setSelectedItem(portfolios.find(item => item.id === id));
-        setOpen(true);
-    };
+import mosPhoto from '../assets/MosPhoto/mosPhoto.webp'
+import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
 
 
-    const handleClose = () => {
-        setOpen(false);
-    };
-
-    const [selectedItem, setSelectedItem] = useState(null);
 
 
 
@@ -71,17 +58,17 @@ const Portfolio = () => {
             picture: <a target='_blank' rel='noreferrer' href="https://unsplash.com/collections/z9v_7HLyOrg/florial">Unsplash</a>,
             name: 'florial perfume',
         },
-        {
-            id: 3,
-            src: Glasses,
-            dialogImg2: Glasses2,
-            dialogText1: 'A project just for me, with inspiration from previous designs I have created. The drinking glass formed like this have for some reason always been in my head as something I want to have so I decided that the best way I can create it was to make my own render.',
-            dialogText2: 'The model is uploaded for free to sketchfab and below is a link to the download if you want to use it for your own projects.',
-            dialogText3: '',
-            behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/162000881/Modern-Glass'>Behance</a>,
-            picture: <a target='_blank' rel='noreferrer' href="https://sketchfab.com/3d-models/drinking-glass-bfe2995de95c4bb2a730501c82cb09ad">Sketchfab</a>,
-            name: 'modern drinking glass',
-        },
+        // {
+        //     id: 3,
+        //     src: Glasses,
+        //     dialogImg2: Glasses2,
+        //     dialogText1: 'A project just for me, with inspiration from previous designs I have created. The drinking glass formed like this have for some reason always been in my head as something I want to have so I decided that the best way I can create it was to make my own render.',
+        //     dialogText2: 'The model is uploaded for free to sketchfab and below is a link to the download if you want to use it for your own projects.',
+        //     dialogText3: '',
+        //     behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/162000881/Modern-Glass'>Behance</a>,
+        //     picture: <a target='_blank' rel='noreferrer' href="https://sketchfab.com/3d-models/drinking-glass-bfe2995de95c4bb2a730501c82cb09ad">Sketchfab</a>,
+        //     name: 'modern drinking glass',
+        // },
         {
             id: 4,
             src: Fjordfiesta,
@@ -126,6 +113,21 @@ const Portfolio = () => {
             name: 'old portfolio',
         },
         {
+            id: 10,
+            src: mosPhoto,
+            dialogImg1: '',
+            dialogImg2: mosPhoto2,
+            dialogImg3: '',
+            dialogImg4: '',
+            dialogImg5: '',
+            dialogText1: 'I had the pleasure of working on a project to showcase the photography portfolio of Mos Sukjaroenkraisri. Working on this project was a great experience, as I had the opportunity to create a website that  showcased Mos\'s photography work.',
+            dialogText2: 'My main objective was to create a user-friendly and visually appealing website that perfectly aligned with Mos\'s style and showcased his portfolio in the best possible way. The final result was a website that not only presented Mos\'s work in an elegant manner but also provided a seamless browsing experience for users.',
+            dialogText3: '',
+            github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/photo-portfolio'>GitHub</a>,
+            page: <a target='_blank' rel='noreferrer' href='https://photo-portfolio-bbb2a.web.app/'>Demo</a>,
+            name: 'Mos photo portfolio',
+        },
+        {
             id: 7,
             src: unsplashPortfolio,
             dialogImg1: '',
@@ -168,117 +170,140 @@ const Portfolio = () => {
 
 
 
-    return (
-        <div name="portfolio" className='bg-background w-full text-white flex align-middle lg:p-20 md:p-10 sm:p-3'>
-
-
-            <div className=' max-w-screen-lg  mx-auto flex flex-col justify-center w-full h-full'>
-                <div className='pb-8 ml-4'>
-                    <p className='text-4xl font-bold inline border-b-4 border-grey'>Portfolio</p>
-                    <p className='py-6 '>Here's some of my previous work</p>
-                </div>
-
-                <div className='grid sm:grid-cols-2 ps:grid-cols-3 gap-4 p-12 sm:p-3 justify-center'>
-                    {
-                        portfolios.map(({ behance, github, id, src, page, picture, name, imglink }) => (
-                            <div key={id} className='shadow-box shadow-black hover:drop-shadow-2xl rounded-lg duration-300 lg:hover:scale-105 md:sm:hover:scale-100'>
-                                <div>
-                                    <p className='text-xl text-center capitalize py-2'>{name}</p>
-                                </div>
-                                <Button onClick={() => handleClickOpen(id)}><img src={src} alt="portfolioImage" /></Button>
-
-
-                                <div className=' flex items-center justify-center'>
-                                    <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{page}{picture}</button>
-                                    <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md'>{github}{behance}</button>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
+    const Portfolio = () => {
+        const [open, setOpen] = useState(false);
+        const [selectedItem, setSelectedItem] = useState(null);
+      
+        const handleClickOpen = (id) => {
+          setSelectedItem(portfolios.find((item) => item.id === id));
+          setOpen(true);
+        };
+      
+        const handleClose = () => {
+          setOpen(false);
+        };
+      
+        return (
+          <div name="portfolio" className="bg-background w-full text-white flex align-middle lg:p-20 md:p-10 sm:p-3">
+            <div className="max-w-screen-lg mx-auto flex flex-col justify-center w-full h-full">
+              <div className="pb-8 ml-4">
+                <p className="text-4xl font-bold inline border-b-4 border-grey">Portfolio</p>
+                <p className="py-6 ">Here's some of my previous work</p>
+              </div>
+      
+              <div className="grid sm:grid-cols-2 ps:grid-cols-3 gap-4 p-12 sm:p-3 justify-center">
+                {portfolios.map(({ behance, github, id, src, page, picture, name, imglink }) => (
+                  <div key={id} className="shadow-box shadow-black hover:drop-shadow-2xl rounded-lg duration-300 lg:hover:scale-105 md:sm:hover:scale-100">
+                    <div>
+                      <p className="text-xl text-center capitalize py-2">{name}</p>
+                    </div>
+                    <Button onClick={() => handleClickOpen(id)}>
+                      <img src={src} alt="portfolioImage" />
+                    </Button>
+      
+                    <div className="flex items-center justify-center">
+                      <button className="w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md">
+                        {page}
+                        {picture}
+                      </button>
+                      <button className="w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md">
+                        {github}
+                        {behance}
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
             <Dialog
-                open={open}
-                onClose={handleClose}
-                BackdropComponent={null}
-                PaperProps={{
-                    sx: {
-                    backgroundColor: 'transparent',
-                    boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
-                    border: '0px solid transparent',
-                    position: 'relative',
-                    overflow: 'auto',
-                    '-ms-overflow-style': 'none',
-                    scrollbarWidth: 'none',
-                    '&::-webkit-scrollbar': {
-                        display: 'none'
-                    },
-                    '-webkit-overflow-scrolling': 'touch',
-                    width: '80vw' // add this line to set the width
-                    }
-                }}
-                sx={{
-                    position: 'fixed',
-                    zIndex: 1300,
-                    top: 0,
-                    left: 0,
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                    backdropFilter: 'blur(3px)'
-                }}
-                >
-                
-                <button
-                    onClick={handleClose}
-                    style={{
-                        position: 'absolute',
-                        top: '5px',
-                        right: '5px',
-                        padding: '5px',
-                        cursor: 'pointer',
-                        backgroundColor: 'transparent',
-                        border: 'none'
-                    }}
-                >
-                    <svg className=' hover:scale-105 ease-in-out' xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                        <path fill="none" d="M0 0h24v24H0z" />
-                        <path stroke="#333" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 6L6 18M6 6l12 12" />
-                    </svg>
-
-                </button>
-
-                {selectedItem && (
-                    <div key={selectedItem.id} className=' bg-gray-800 border-none'>
-                        <div>
-                            <p className='text-3xl text-center capitalize py-2 ' style={{ color: '#ddd' }}>{selectedItem.name}</p>
-
-                        </div>
-                        <div className='p-2'><p className=' font-light text-secondary'>{selectedItem.dialogText1}</p></div>
-                        <img src={selectedItem.src} alt="portfolioImage" className='p-2' />
-                        <hr className='mx-2' style={{ borderColor: 'transparent' }} />
-                        <img src={selectedItem.dialogImg1} alt="" className='p-2' />
-                        <div className='p-2'><p className=' font-light text-secondary'>{selectedItem.dialogText2}</p></div>
-                        <img src={selectedItem.dialogImg2} alt="" className='p-2' />
-                        <hr className='mx-2' style={{ borderColor: 'transparent' }} />
-                        <div className='w-full grid grid-cols-2 gap-4 text-center p-2'>
-                            <img src={selectedItem.dialogImg3} alt="" className='' />
-                            <img src={selectedItem.dialogImg4} alt="" className='' />
-                            <img src={selectedItem.dialogImg5} alt="" className='' />
-                            
-                        </div>
-                        <div className='p-2'><p className=' text-center font-light text-secondary'>{selectedItem.dialogText3}</p></div>
-                        
-                        <div className=' flex items-center justify-center'>
-                            <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber text-[#eee] bg-[rgba(0,0,0,0.2)] hover:bg-background2 rounded-md'>{selectedItem.page}{selectedItem.picture}</button>
-                            <button className=' w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber text-[#eee] bg-[rgba(0,0,0,0.2)] hover:bg-background2 rounded-md'>{selectedItem.github}{selectedItem.behance}</button>
-                        </div>
-                    </div>
-                )}
-            </Dialog>
-
-            {/* Refactor code!!! */}
-
+              open={open}
+              onClose={handleClose}
+              BackdropComponent={null}
+              PaperProps={{
+                sx: {
+                  backgroundColor: 'transparent',
+                  boxShadow: '0px 3px 5px rgba(0, 0, 0, 0.5)',
+                  border: '0px solid transparent',
+                  position: 'relative',
+                  overflow: 'auto',
+                  '-ms-overflow-style': 'none',
+                  scrollbarWidth: 'none',
+                  '&::-webkit-scrollbar': {
+                    display: 'none',
+                  },
+                  '-webkit-overflow-scrolling': 'touch',
+                  width: '80vw',
+                },
+            }}
+            sx={{
+              position: 'fixed',
+              zIndex: 1300,
+              top: 0,
+              left: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backdropFilter: 'blur(3px)',
+            }}
+          >
+            <button
+              onClick={handleClose}
+              style={{
+                position: 'absolute',
+                top: '5px',
+                right: '5px',
+                padding: '5px',
+                cursor: 'pointer',
+                backgroundColor: 'transparent',
+                border: 'none',
+              }}
+            >
+              <svg className="hover:scale-105 ease-in-out" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path stroke="#333" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+        
+            {selectedItem && (
+              <div key={selectedItem.id} className="bg-gray-800 border-none">
+                <div>
+                  <p className="text-3xl text-center capitalize py-2 " style={{ color: '#ddd' }}>
+                    {selectedItem.name}
+                  </p>
+                </div>
+                <div className="p-2">
+                  <p className="font-light text-secondary">{selectedItem.dialogText1}</p>
+                </div>
+                <img src={selectedItem.src} alt="portfolioImage" className="p-2" />
+                <hr className="mx-2" style={{ borderColor: 'transparent' }} />
+                <img src={selectedItem.dialogImg1} alt="" className="p-2" />
+                <div className="p-2">
+                  <p className="font-light text-secondary">{selectedItem.dialogText2}</p>
+                </div>
+                <img src={selectedItem.dialogImg2} alt="" className="p-2" />
+                <hr className="mx-2" style={{ borderColor: 'transparent' }} />
+                <div className="w-full grid grid-cols-2 gap-4 text-center p-2">
+                  <img src={selectedItem.dialogImg3} alt="" className="" />
+                  <img src={selectedItem.dialogImg4} alt="" className="" />
+                  <img src={selectedItem.dialogImg5} alt="" className="" />
+                </div>
+                <div className="p-2">
+                  <p className="text-center font-light text-secondary">{selectedItem.dialogText3}</p>
+                </div>
+        
+                <div className="flex items-center justify-center">
+                  <button className="w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber text-[#eee] bg-[rgba(0,0,0,0.2)] hover:bg-background2 rounded-md">
+                    {selectedItem.page}
+                    {selectedItem.picture}
+                  </button>
+                  <button className="w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber text-[#eee] bg-[rgba(0,0,0,0.2)] hover:bg-background2 rounded-md">
+                    {selectedItem.github}
+                    {selectedItem.behance}
+                  </button>
+                </div>
+              </div>
+            )}
+          </Dialog>
         </div>
-    )
-}
-
-export default Portfolio
+        );
+    };
+    
+    export default Portfolio;

@@ -109,7 +109,7 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText2: 'The previous portfolio was structured as a single-page application, featuring a user-friendly navigation bar on the right side for easy access to various sections. Additionally, it incorporated a light and dark mode switch, catering to users preferences and enhancing the overall browsing experience.',
             dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/old-portfolio'>GitHub</a>,
-            page: <a target='_blank' rel='noreferrer' href='https://my-old-portfolio.web.app'>Demo</a>,
+            page: <a target='_blank' rel='noreferrer' href='https://kazuophoto.com'>Demo</a>,
             name: 'old portfolio',
         },
         {
@@ -124,7 +124,7 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText2: 'My main objective was to create a user-friendly and visually appealing website that perfectly aligned with Mos\'s style and showcased his portfolio in the best possible way. The final result was a website that not only presented Mos\'s work in an elegant manner but also provided a seamless browsing experience for users.',
             dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/photo-portfolio'>GitHub</a>,
-            page: <a target='_blank' rel='noreferrer' href='https://photo-portfolio-bbb2a.web.app/'>Demo</a>,
+            page: <a target='_blank' rel='noreferrer' href='https://www.sauntered.net'>Demo</a>,
             name: 'Mos photo portfolio',
         },
         {

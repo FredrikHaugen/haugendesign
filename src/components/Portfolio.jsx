@@ -139,7 +139,7 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText2: 'To achieve this, I adopted a minimalistic design approach, featuring a pristine white background that accentuated the high-contrast colors in both the text and images. This design choice not only provided a clean and modern aesthetic, but it also allowed Kazuo Ota\'s  photography to take the main focus of the viewer.',
             dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/unsplashPortfolio'>GitHub</a>,
-            page: <a target='_blank' rel='noreferrer' href='https://test-unsplash-portfolio.web.app/'>Demo</a>,
+            page: <a target='_blank' rel='noreferrer' href='https://www.kazuophoto.com'>Demo</a>,
             name: 'Kazuo Ota portfolio',
         },
         {

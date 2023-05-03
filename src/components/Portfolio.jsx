@@ -44,6 +44,8 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText3: 'Photography by: Alexander Krivbitskiy',
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/124386075/Pureen-Brand-Product-Design'>Behance</a>,
             picture: <a target='_blank' rel='noreferrer' href="https://unsplash.com/collections/_zTCpaNN1iw/pureen">Unsplash</a>,
+            link1: 'https://www.behance.net/gallery/124386075/Pureen-Brand-Product-Design',
+            link2: 'https://unsplash.com/collections/_zTCpaNN1iw/pureen',
             name: 'pureen cosmetics',
         },
         {
@@ -56,6 +58,8 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText3: '',
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/115300163/Florial-Logo-design-product-mockup'>Behance</a>,
             picture: <a target='_blank' rel='noreferrer' href="https://unsplash.com/collections/z9v_7HLyOrg/florial">Unsplash</a>,
+            link1: 'https://www.behance.net/gallery/115300163/Florial-Logo-design-product-mockup',
+            link2: 'https://unsplash.com/collections/z9v_7HLyOrg/florial',
             name: 'florial perfume',
         },
         // {
@@ -80,6 +84,8 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText3: '',
             behance: <a target='_blank' rel='noreferrer' href='https://www.behance.net/gallery/141313091/Fjordfiesta-1001-AX-Sofat'>Behance</a>,
             picture: <a target='_blank' rel='noreferrer' href="https://fjordfiesta.com/products/1001-ax-sofa">Fjordfiesta</a>,
+            link1: 'https://www.behance.net/gallery/141313091/Fjordfiesta-1001-AX-Sofat',
+            link2: 'https://fjordfiesta.com/products/1001-ax-sofa',
             name: 'fjordfiesta 1001 AX sofa',
         },
         {
@@ -95,6 +101,8 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/haugendesign'>GitHub</a>,
             page: <a target='_blank' rel='noreferrer' href="https://www.haugendesign.net">Demo</a>,
+            link1: 'https://github.com/FredrikHaugen/haugendesign',
+            link2: 'https://www.haugendesign.net',
             name: 'current portfolio',
         },
         {
@@ -109,7 +117,9 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText2: 'The previous portfolio was structured as a single-page application, featuring a user-friendly navigation bar on the right side for easy access to various sections. Additionally, it incorporated a light and dark mode switch, catering to users preferences and enhancing the overall browsing experience.',
             dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/old-portfolio'>GitHub</a>,
-            page: <a target='_blank' rel='noreferrer' href='https://kazuophoto.com'>Demo</a>,
+            page: <a target='_blank' rel='noreferrer' href='https://my-old-portfolio.web.app'>Demo</a>,
+            link1: 'https://github.com/FredrikHaugen/old-portfolio',
+            link2: 'https://my-old-portfolio.web.app',
             name: 'old portfolio',
         },
         {
@@ -125,6 +135,8 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/photo-portfolio'>GitHub</a>,
             page: <a target='_blank' rel='noreferrer' href='https://www.sauntered.net'>Demo</a>,
+            link1: 'https://github.com/FredrikHaugen/photo-portfolio',
+            link2: 'https://www.sauntered.net',
             name: 'Mos photo portfolio',
         },
         {
@@ -140,6 +152,8 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText3: '',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/unsplashPortfolio'>GitHub</a>,
             page: <a target='_blank' rel='noreferrer' href='https://www.kazuophoto.com'>Demo</a>,
+            link1: 'https://github.com/FredrikHaugen/unsplashPortfolio',
+            link2: 'https://www.kazuophoto.com',
             name: 'Kazuo Ota portfolio',
         },
         {
@@ -150,6 +164,8 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
             dialogText2: 'The end result is a tool that allows users to automate the process of responding to iMessage messages by using machine learning to generate pre-written responses. This project could be useful for anyone who wants to save time and effort while still being responsive to their iMessage contacts.',
             dialogText3: 'This project is available for public use and can be easily cloned free of charge from my GitHub. By cloning the project, users can make use of the automated response capabilities for their own iMessage conversations, saving time and effort in managing message exchanges.',
             github: <a target='_blank' rel='noreferrer' href='https://github.com/FredrikHaugen/imessage_chatbot_openai'>GitHub</a>,
+            link1: 'https://github.com/FredrikHaugen/imessage_chatbot_openai',
+            link2: 'https://www.google.com',
             name: 'OpenAI + iMessage',
         },
         {
@@ -192,7 +208,7 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
               </div>
       
               <div className="grid sm:grid-cols-2 ps:grid-cols-3 gap-4 p-12 sm:p-3 justify-center">
-                {portfolios.map(({ behance, github, id, src, page, picture, name, imglink }) => (
+                {portfolios.map(({ behance, github, id, src, page, picture, name, imglink, link1, link2 }) => (
                   <div key={id} className="shadow-box shadow-black hover:drop-shadow-2xl rounded-lg duration-300 lg:hover:scale-105 md:sm:hover:scale-100">
                     <div>
                       <p className="text-xl text-center capitalize py-2">{name}</p>
@@ -202,7 +218,9 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
                     </Button>
       
                     <div className="flex items-center justify-center">
-                      <button className="w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md">
+                      <button 
+                      onClick={() => window.open(link2, '_blank', 'noopener,noreferrer')}
+                      className="w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber hover:bg-background2 rounded-md">
                         {page}
                         {picture}
                       </button>
@@ -294,10 +312,11 @@ import mosPhoto2 from '../assets/MosPhoto/mosPhoto2.webp'
                     {selectedItem.page}
                     {selectedItem.picture}
                   </button>
-                  <button className="w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber text-[#eee] bg-[rgba(0,0,0,0.2)] hover:bg-background2 rounded-md">
-                    {selectedItem.github}
-                    {selectedItem.behance}
-                  </button>
+                  
+                    <button className="w-1/2 px-6 py-3 m-4 duration-300 lg:hover:scale-105 md:sm:hover:scale-100 hover:text-amber text-[#eee] bg-[rgba(0,0,0,0.2)] hover:bg-background2 rounded-md" onClick={() => window.open(selectedItem.link2, '_blank')}>
+                      {selectedItem.github}
+                      {selectedItem.behance}
+                    </button>
                 </div>
               </div>
             )}

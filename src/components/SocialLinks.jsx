@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaBehance } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaBehance, FaDeviantart } from 'react-icons/fa';
 import { HiOutlineMail } from 'react-icons/hi';
 
 const links = [
@@ -35,6 +35,15 @@ const links = [
     id: 4,
     child: (
       <>
+        DeviantArt <FaDeviantart size={30} />
+      </>
+    ),
+    href: 'https://www.deviantart.com/haugendesign',
+  },
+  {
+    id: 5,
+    child: (
+      <>
         Contact <HiOutlineMail size={30} />
       </>
     ),
@@ -62,5 +71,6 @@ const SocialLinks = () => (
     </ul>
   </div>
 );
+
 
 export default SocialLinks;

@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaBehance } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaBehance, FaDeviantart } from 'react-icons/fa';
 import { HiMail } from 'react-icons/hi';
+import { SiFiverr, SiUpwork } from 'react-icons/si';
 
 const contactLinks = [
   {
@@ -22,6 +23,21 @@ const contactLinks = [
     href: 'https://www.behance.net/fredrikhaugen',
     icon: <FaBehance size={40} color='amber'/>,
     label: 'Behance',
+  },
+  {
+    href: 'https://www.deviantart.com/haugendesign',
+    icon: <FaDeviantart size={40} color='amber'/>,
+    label: 'DeviantArt',
+  },
+  {
+    href: 'https://www.fiverr.com/haugendesign?up_rollout=true',
+    icon: <SiFiverr size={40} color='amber'/>,
+    label: 'DeviantArt',
+  },
+  {
+    href: 'https://www.upwork.com/freelancers/~01812eebcbdcfb5666',
+    icon: <SiUpwork size={40} color='amber'/>,
+    label: 'DeviantArt',
   },
 ];
 

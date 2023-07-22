@@ -1,19 +1,15 @@
 import React from 'react'
-import { SiCss3, SiPython } from 'react-icons/si'
+import { SiCss3, SiPython, SiC } from 'react-icons/si'
 import { SiHtml5 } from 'react-icons/si'
 import { SiJavascript } from 'react-icons/si'
 import { SiReact } from 'react-icons/si'
 import { SiTailwindcss } from 'react-icons/si'
 import { SiNextdotjs } from 'react-icons/si'
 import { SiBlender } from 'react-icons/si'
-import { SiAdobeaftereffects } from 'react-icons/si'
-import { SiAdobeillustrator } from 'react-icons/si'
-import { SiAdobelightroom } from 'react-icons/si'
-import { SiAdobephotoshop } from 'react-icons/si'
-import { SiAdobepremierepro } from 'react-icons/si'
-import { SiAdobexd } from 'react-icons/si'
+import { SiAdobe } from 'react-icons/si'
 import { SiFigma } from 'react-icons/si'
 import { SiFlutter } from 'react-icons/si'
+import { SiMysql } from 'react-icons/si'
 
 
   
@@ -68,52 +64,34 @@ import { SiFlutter } from 'react-icons/si'
     },
     {
       id: 9,
+      title: 'MySQL',
+      icon: <SiMysql className='w-20 h-auto mx-auto text-amber' />,
+      style: 'text-transform: Capitalize; !important',
+    },
+    {
+      id: 10,
+      title: 'C',
+      icon: <SiC className='w-20 h-auto mx-auto text-amber' />,
+      style: 'text-transform: Capitalize; !important',
+    },
+    {
+      id: 11,
       title: 'Blender',
       icon: <SiBlender className='w-20 h-auto mx-auto text-amber' />,
       style: 'text-transform: Capitalize; !important',
     },
     {
-      id: 10,
-      title: 'Adobe Illustrator',
-      icon: <SiAdobeillustrator className='w-20 h-auto mx-auto text-amber' />,
-      style: 'text-transform: Capitalize; !important',
-    },
-    {
-      id: 11,
-      title: 'Adobe Lightroom',
-      icon: <SiAdobelightroom className='w-20 h-auto mx-auto text-amber' />,
-      style: 'text-transform: Capitalize; !important',
-    },
-    {
       id: 12,
-      title: 'Adobe Photoshop',
-      icon: <SiAdobephotoshop className='w-20 h-auto mx-auto text-amber' />,
+      title: 'Adobe Suite',
+      icon: <SiAdobe className='w-20 h-auto mx-auto text-amber' />,
       style: 'text-transform: Capitalize; !important',
     },
     {
       id: 13,
-      title: 'Adobe Premiere',
-      icon: <SiAdobepremierepro className='w-20 h-auto mx-auto text-amber' />,
-      style: 'text-transform: Capitalize !important;',
-    },
-    {
-      id: 14,
-      title: 'Adobe XD',
-      icon: <SiAdobexd className='w-20 h-auto mx-auto text-amber' />,
-      style: 'text-transform: Capitalize !important;',
-    },
-    {
-      id: 15,
-      title: 'Adobe After Effects',
-      icon: <SiAdobeaftereffects className='w-20 h-auto mx-auto text-amber' />,
-      style: 'text-transform: Capitalize; !important',
-    },
-    {
-      id: 16,
       title: 'Figma',
       icon: <SiFigma className='w-20 h-auto mx-auto text-amber' />,
       style: 'text-transform: Capitalize; !important',
-    }
+    },
 
   ]
   

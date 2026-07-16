@@ -109,6 +109,21 @@ export const about = defineType({
       title: 'LinkedIn URL',
       type: 'url',
     }),
+    defineField({
+      name: 'instagram',
+      title: 'Instagram URL',
+      type: 'url',
+    }),
+    defineField({
+      name: 'threads',
+      title: 'Threads URL',
+      type: 'url',
+    }),
+    defineField({
+      name: 'x',
+      title: 'X URL',
+      type: 'url',
+    }),
   ],
   preview: {
     select: {title: 'name'},

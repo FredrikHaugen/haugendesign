@@ -1,0 +1,12 @@
+{
+  "name": "haugendesign-root",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k -n web,studio -c cyan,magenta \"npm --prefix web run dev -- -p 3000\" \"pnpm --dir studio dev --port 3333\"",
+    "build": "npm --prefix web run build && pnpm --dir studio build",
+    "lint": "npm --prefix web run lint && pnpm --dir studio lint"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}

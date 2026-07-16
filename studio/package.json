@@ -9,6 +9,7 @@
     "deploy": "sanity deploy",
     "deploy-graphql": "sanity graphql deploy",
     "dev": "sanity dev",
+    "lint": "eslint .",
     "start": "sanity start"
   },
   "keywords": [

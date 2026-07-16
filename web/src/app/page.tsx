@@ -1,37 +1,48 @@
-import Link from "next/link";
 import { client } from "@/sanity/client";
-import { defineQuery, type SanityDocument } from "next-sanity";
+import { HOME_QUERY, type HomeData } from "@/sanity/queries";
+import { About } from "@/components/About";
+import { Contact } from "@/components/Contact";
+import { Credentials } from "@/components/Credentials";
+import { Hero } from "@/components/Hero";
+import { Other } from "@/components/Other";
+import { Work } from "@/components/Work";
 
-const POSTS_QUERY = defineQuery(
-  `*[_type == "post" && defined(slug.current)] | order(_createdAt desc){ _id, title, slug }`
-);
+const options = { next: { revalidate: 3600 } };
 
-const options = { next: { revalidate: 30 } };
+const navLinkClass = "transition-colors duration-150 hover:text-ink";
 
-export default async function PostsPage() {
-  const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
+export default async function HomePage() {
+  const { about, projects, other } = await client.fetch<HomeData>(HOME_QUERY, {}, options);
 
   return (
-    <main className="mx-auto flex w-full max-w-3xl flex-1 flex-col gap-8 px-6 py-16 font-sans">
-      <h1 className="text-3xl font-semibold tracking-tight">Posts</h1>
-      {posts.length === 0 ? (
-        <p className="text-zinc-600 dark:text-zinc-400">
-          No posts yet. Add one in the Sanity Studio.
-        </p>
-      ) : (
-        <ul className="flex flex-col gap-4">
-          {posts.map((post) => (
-            <li key={post._id}>
-              <Link
-                className="text-lg font-medium underline-offset-4 hover:underline"
-                href={`/${(post.slug as { current?: string })?.current}`}
-              >
-                {post.title as string}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </main>
+    <>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-6 focus:top-6 focus:bg-paper focus:px-4 focus:py-2"
+      >
+        Skip to content
+      </a>
+      <header className="mx-auto w-full max-w-content px-6">
+        <nav className="flex justify-end gap-6 py-6 text-sm text-ink-dim">
+          <a href="#about" className={navLinkClass}>
+            About
+          </a>
+          <a href="#work" className={navLinkClass}>
+            Work
+          </a>
+          <a href="#contact" className={navLinkClass}>
+            Contact
+          </a>
+        </nav>
+      </header>
+      <main id="main">
+        {about ? <Hero about={about} /> : null}
+        {about ? <About about={about} /> : null}
+        <Work projects={projects} />
+        <Other other={other} />
+        {about ? <Credentials about={about} /> : null}
+        {about ? <Contact about={about} /> : null}
+      </main>
+    </>
   );
 }

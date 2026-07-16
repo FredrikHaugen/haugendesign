@@ -1,3 +1,5 @@
-import {post} from './post'
+import {about} from './about'
+import {otherProject} from './otherProject'
+import {project} from './project'
 
-export const schemaTypes = [post]
+export const schemaTypes = [project, about, otherProject]

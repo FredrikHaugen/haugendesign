@@ -1,20 +1,38 @@
 import Image from "next/image";
 import type { About } from "@/sanity/queries";
+import { Reveal } from "./Reveal";
 
 export function Hero({ about }: { about: About }) {
   return (
-    <section>
-      <div className="mx-auto w-full max-w-content px-6 pb-14 pt-8 md:pb-20 md:pt-12">
-        <h1 className="font-display text-5xl font-light leading-display tracking-display md:text-6xl">
-          {about.name}
-        </h1>
-        {about.oneLiner ? <p className="mt-6 text-lg">{about.oneLiner}</p> : null}
-        {about.status ? <p className="mt-3 text-sm text-ink-dim">{about.status}</p> : null}
+    <section className="relative overflow-hidden">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="aurora-blob absolute -top-16 right-1/4 h-72 w-72 rounded-full bg-aurora-green opacity-40" />
+        <div
+          className="aurora-blob absolute top-24 right-12 h-64 w-64 rounded-full bg-aurora-violet opacity-40"
+          style={{ animationDelay: "-18s" }}
+        />
+      </div>
+      <div className="relative mx-auto w-full max-w-content px-6 pb-14 pt-8 md:pb-20 md:pt-12">
+        <Reveal>
+          <h1 className="font-display text-5xl font-light leading-display tracking-display md:text-6xl">
+            {about.name}
+          </h1>
+        </Reveal>
+        {about.oneLiner ? (
+          <Reveal delay={100}>
+            <p className="mt-6 text-lg">{about.oneLiner}</p>
+          </Reveal>
+        ) : null}
+        {about.status ? (
+          <Reveal delay={200}>
+            <p className="mt-3 text-sm text-ink-dim">{about.status}</p>
+          </Reveal>
+        ) : null}
       </div>
       {/* TODO: hero photograph needed at web/public/hero.jpg. The figure
           renders once the file exists and the site is rebuilt. */}
       {process.env.NEXT_PUBLIC_HAS_HERO === "1" ? (
-        <figure>
+        <figure className="relative">
           <div className="relative aspect-3/2 w-full">
             <Image
               src="/hero.jpg"

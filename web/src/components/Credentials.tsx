@@ -1,4 +1,5 @@
 import type { About } from "@/sanity/queries";
+import { Reveal } from "./Reveal";
 
 const labelClass = "text-xs uppercase tracking-widest text-ink-dim";
 
@@ -11,12 +12,14 @@ export function Credentials({ about }: { about: About }) {
   return (
     <section id="credentials" className="border-t border-rule">
       <div className="mx-auto w-full max-w-content px-6 py-20 md:py-24">
-        <h2 className="font-display text-3xl font-normal leading-display tracking-display">
-          Credentials
-        </h2>
+        <Reveal>
+          <h2 className="section-heading font-display text-3xl font-normal leading-display tracking-display">
+            Credentials
+          </h2>
+        </Reveal>
         <div className="mt-10 grid gap-14 md:grid-cols-2">
           {hasWork ? (
-            <div>
+            <Reveal>
               <h3 className={labelClass}>Work history</h3>
               <ul className="mt-6 space-y-8">
                 {about.work?.map((entry) => (
@@ -29,9 +32,9 @@ export function Credentials({ about }: { about: About }) {
                   </li>
                 ))}
               </ul>
-            </div>
+            </Reveal>
           ) : null}
-          <div className="space-y-14">
+          <Reveal className="space-y-14" delay={100}>
             {hasEducation ? (
               <div>
                 <h3 className={labelClass}>Education</h3>
@@ -60,7 +63,7 @@ export function Credentials({ about }: { about: About }) {
                 </dl>
               </div>
             ) : null}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

@@ -13,7 +13,10 @@ export const HOME_QUERY = defineQuery(`{
     skills[]{ _key, category, items },
     email,
     github,
-    linkedin
+    linkedin,
+    instagram,
+    threads,
+    x
   },
   "projects": *[_type == "project" && defined(slug.current)] | order(order asc){
     _id,
@@ -84,6 +87,9 @@ export interface About {
   email: string | null;
   github: string | null;
   linkedin: string | null;
+  instagram: string | null;
+  threads: string | null;
+  x: string | null;
 }
 
 export interface Screenshot {

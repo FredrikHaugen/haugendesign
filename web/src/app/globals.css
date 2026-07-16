@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* brand.md: no hex outside these tokens. The default palette is cleared so
-   only the five brand colors exist as utilities. */
+   only the brand colors exist as utilities. */
 @theme {
   --color-*: initial;
 }
@@ -12,6 +12,20 @@
   --color-ink-dim: #6b7076;
   --color-rule: #e2e2de;
   --color-accent: #1b4a5a;
+
+  /* muted pastels, stack tags only */
+  --color-pastel-blue: #e1f3fe;
+  --color-pastel-blue-ink: #1f6c9f;
+  --color-pastel-green: #edf3ec;
+  --color-pastel-green-ink: #346538;
+  --color-pastel-yellow: #fbf3db;
+  --color-pastel-yellow-ink: #956400;
+  --color-pastel-red: #fdebec;
+  --color-pastel-red-ink: #9f2f2d;
+
+  /* ambient hero tint, pulled from the aurora */
+  --color-aurora-green: #a9cdb9;
+  --color-aurora-violet: #b3a9cf;
 
   --font-sans: var(--font-inter);
   --font-display: var(--font-newsreader);
@@ -50,9 +64,56 @@
   }
 }
 
-/* Unlayered so it beats the transition utilities; layered rules lose to
-   unlayered ones regardless of specificity. */
+@layer components {
+  /* short accent tick above section headings */
+  .section-heading::before {
+    content: "";
+    display: block;
+    width: 2rem;
+    height: 1px;
+    background-color: var(--color-accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .aurora-blob {
+    filter: blur(72px);
+    animation: aurora-drift 36s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes aurora-drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(2.5rem, 1.5rem, 0) scale(1.15);
+  }
+}
+
+/* Reveal on scroll. The hidden state applies only when scripting is
+   available, so the copy is always present and visible without JS. */
+@media (scripting: enabled) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 600ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-revealed {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Unlayered so it beats every utility and component rule above. */
 @media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
   *,
   ::before,
   ::after {

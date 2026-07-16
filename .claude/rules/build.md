@@ -85,6 +85,6 @@ Two of them are publishing blockers, not suggestions. Neither project ships unti
 - Add analytics beyond a single Pirsch tag
 - Add a contact form
 - Add a newsletter signup
-- Add Framer Motion for a site with one hover state
-- Install an icon library
+- Add Framer Motion. The reveal animations are CSS plus one IntersectionObserver client component.
+- Add a second icon library. `@phosphor-icons/react` is the one, imported via `dist/ssr`.
 - Generate placeholder copy. See `.claude/rules/tov.md`. Empty is better than invented.

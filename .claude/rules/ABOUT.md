@@ -65,4 +65,4 @@ Oslo. Nov 2020 – Feb 2024. Client websites end-to-end. React, Sanity, Tailwind
 ## Contact
 
 Email: CONFIRM: fredrik@haugendesign.net GitHub: github.com/FredrikHaugen LinkedIn: https://www.linkedin.com/in/fredrik-haugen
-Instagram: @mune.so Threads: @mune.so
+Instagram: @mune.so Threads: @mune.so X: @mune_so

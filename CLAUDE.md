@@ -72,6 +72,8 @@ Tailwind v4, configured CSS-first in `web/src/app/globals.css` — there is no `
 - The five brand colors, both font variables, the prose measure (`--container-content`), and display leading/tracking are all defined as tokens in `globals.css`. The default Tailwind palette is cleared with `--color-*: initial`, so classes like `text-zinc-600` do not exist — use the brand tokens. No hex outside the token block, no arbitrary values (see `.claude/rules/brand.md`).
 - `@sanity/image-url` is wired up in `web/src/sanity/image.ts` (`urlFor`); `cdn.sanity.io` is allowed in `next.config.ts` `remotePatterns`. In v2 of that package, `createImageUrlBuilder` and `SanityImageSource` are named exports from the package root — the `lib/types/types` deep import no longer exists.
 - The hero figure renders only when `web/public/hero.jpg` exists; the check is baked in at build time via `NEXT_PUBLIC_HAS_HERO` in `next.config.ts`.
+- Icons come from `@phosphor-icons/react`, imported via `@phosphor-icons/react/dist/ssr` (the root export uses React context and breaks in Server Components). Decorative only: `aria-hidden`, always beside a text label.
+- Motion: `web/src/components/Reveal.tsx` is the one client component (IntersectionObserver, one-time reveals). The hidden state lives behind a `scripting: enabled` media query so content is never lost without JS, and an unlayered `prefers-reduced-motion` block kills all animation.
 
 ## Code Style
 

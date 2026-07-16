@@ -39,6 +39,11 @@ Rules:
 - Borders or nothing. **No card shadows.** No `shadow-lg`, no `shadow-md`, no elevation system.
 - No hardcoded hex outside the token definitions. No Tailwind arbitrary values.
 
+Fredrik's July 2026 amendment, on top of the rules above:
+- Stack tags render as pills tinted with four washed-out pastels (tokens in `globals.css`, pairs pulled from the warm-monochrome system). Pastels appear nowhere else.
+- The hero carries a faint aurora tint: two blurred blobs, green and violet, low opacity. It stands in for the photograph's palette until the hero ships and stays quiet after.
+- One decorative use of the accent is allowed: the 2rem hairline tick above section headings.
+
 ## Type
 
 **Proposal: Newsreader (display) + Inter (body).**
@@ -65,18 +70,18 @@ Rules:
 
 ## Motion
 
-Almost none.
+Subtle, not cinematic. Fredrik overruled the original almost-none proposal in July 2026 and asked for a livelier page. The current list:
 
-- **No scroll-triggered fade-ins on every section.** The previous version did this and it makes a four-section site feel like a slideshow.
-- No parallax. No spring physics. No bounce.
-- Permitted: link hover state, 150ms, opacity or color only. That's the list.
-- If the hero aurora animates, that's the one moving thing on the page, and only if Fredrik supplies the sequence.
+- One-time reveals: 12px fade-up over 600ms, staggered 80 to 100ms, once per element, never re-triggered. The hidden state sits behind a `scripting: enabled` media query so the copy is always in the HTML and visible without JS.
+- Link hover transitions at 150ms: color, opacity, and small icon transforms.
+- The ambient aurora tint in the hero: two blurred blobs, low opacity, drifting on a 36s loop.
+- Still banned: parallax, spring physics, bounce, marquees, anything that moves continuously inside the content column.
 - Everything guarded by `prefers-reduced-motion`.
 
 ## Forbidden
 
 - Skill bars, percentage ratings, star ratings, proficiency meters
-- Icon libraries. If an icon is needed, it's an inline SVG. Three icons maximum on the whole site (mail, GitHub, LinkedIn).
+- A second icon set. Icons come from `@phosphor-icons/react` (Fredrik's July 2026 call, replacing the old three-inline-SVGs rule), imported from `dist/ssr`, small, `aria-hidden`, always beside a text label. No icon-only buttons.
 - A contact form. It's a mailto link.
 - Testimonial sections, "as seen in," logo walls
 - A blog. He has one, it's at mune.so/notes.

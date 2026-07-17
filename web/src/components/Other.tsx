@@ -6,32 +6,43 @@ export function Other({ other }: { other: OtherProject[] }) {
   if (other.length === 0) return null;
 
   return (
-    <section id="other" className="border-t border-rule">
-      <div className="mx-auto w-full max-w-content px-6 py-20 md:py-24">
-        <Reveal>
-          <h2 className="section-heading font-display text-3xl font-normal leading-display tracking-display">
-            Other
-          </h2>
-          <ul className="mt-10 space-y-3">
-            {other.map((item) => (
-              <li key={item._id} className="flex items-baseline justify-between gap-6">
-                <a
-                  href={item.url}
-                  rel="noreferrer"
-                  className="group inline-flex items-center gap-1 text-accent transition-opacity duration-150 hover:opacity-70"
-                >
-                  <span className="underline decoration-1 underline-offset-4">{item.title}</span>
-                  <ArrowUpRight
-                    aria-hidden
-                    size={14}
-                    className="transition-transform duration-150 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  />
-                </a>
-                <span className="text-sm text-ink-dim">{item.year}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
+    <section id="other" className="scroll-mt-20 border-t border-rule">
+      <div className="mx-auto w-full max-w-6xl px-6 py-24 md:py-32 lg:grid lg:grid-cols-12 lg:gap-12">
+        <div className="lg:col-span-4">
+          <Reveal className="lg:sticky lg:top-24">
+            <h2 className="section-heading font-display text-4xl font-light leading-display tracking-display md:text-5xl">
+              Other
+            </h2>
+          </Reveal>
+        </div>
+        <div className="mt-10 lg:col-span-8 lg:mt-0">
+          <Reveal delay={100}>
+            <ul className="border-t border-rule">
+              {other.map((item, index) => (
+                <li key={item._id}>
+                  <a
+                    href={item.url}
+                    rel="noreferrer"
+                    className="group flex items-baseline justify-between gap-6 border-b border-rule py-5 transition-colors duration-150 hover:text-accent"
+                  >
+                    <span className="flex items-baseline gap-5">
+                      <span aria-hidden className="font-display text-sm italic text-ink-dim">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      <span>{item.title}</span>
+                      <ArrowUpRight
+                        aria-hidden
+                        size={14}
+                        className="self-center opacity-0 transition-opacity duration-150 group-hover:opacity-100"
+                      />
+                    </span>
+                    <span className="text-sm tabular-nums text-ink-dim">{item.year}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

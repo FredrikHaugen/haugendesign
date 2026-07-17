@@ -15,14 +15,22 @@ const labelClass = "underline decoration-1 underline-offset-4";
 
 export function Contact({ about }: { about: About }) {
   return (
-    <section id="contact" className="border-t border-rule">
-      <div className="mx-auto w-full max-w-content px-6 py-20 md:py-24">
+    <section id="contact" className="scroll-mt-20 border-t border-rule">
+      <div className="mx-auto w-full max-w-6xl px-6 py-24 md:py-32">
         <Reveal>
-          <h2 className="section-heading font-display text-3xl font-normal leading-display tracking-display">
+          <h2 className="section-heading font-display text-4xl font-light leading-display tracking-display md:text-5xl">
             Contact
           </h2>
-          {about.status ? <p className="mt-10">{about.status}</p> : null}
-          <ul className="mt-6 flex flex-wrap gap-x-8 gap-y-3">
+        </Reveal>
+        {about.status ? (
+          <Reveal delay={100}>
+            <p className="mt-12 max-w-3xl font-display text-3xl font-light leading-display tracking-display md:text-5xl">
+              {about.status}
+            </p>
+          </Reveal>
+        ) : null}
+        <Reveal delay={200}>
+          <ul className="mt-14 flex flex-wrap gap-x-10 gap-y-4 border-t border-rule pt-8">
             {about.email ? (
               <li>
                 <a className={linkClass} href={`mailto:${about.email}`}>

@@ -11,6 +11,8 @@ Monorepo with two independent packages plus a thin root `package.json` that only
 
 Keep the Studio standalone — do not embed it in the Next.js app via `next-sanity/studio`.
 
+Each package has its own `CLAUDE.md` (`studio/CLAUDE.md`, `web/CLAUDE.md`) with package-specific detail; read the one for the package you're editing.
+
 ## Commands
 
 Root (run in repo root, requires `pnpm install` there once):
@@ -60,7 +62,7 @@ The copy in these files is the input to Sanity, entered verbatim. **Do not write
 
 ## Next.js Version Caveat
 
-`web/AGENTS.md` warns this Next.js version (16.x) differs from training data — read the relevant guide in `web/node_modules/next/dist/docs/` before writing Next.js code. Two consequences already relied on here:
+`web/CLAUDE.md` warns this Next.js version (16.x) differs from training data — read the relevant guide in `web/node_modules/next/dist/docs/` before writing Next.js code. Two consequences already relied on here:
 
 - `cacheComponents` is **not** enabled in `next.config.ts`, so the previous caching model applies: fetches use `{ next: { revalidate: N } }` options (see the existing pages). Do not add `"use cache"` directives without enabling Cache Components.
 - Dynamic route `params` is a `Promise` and must be awaited.

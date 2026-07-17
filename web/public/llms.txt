@@ -1,0 +1,27 @@
+# Fredrik Haugen (haugendesign)
+
+> Fullstack developer. Oslo. Currently building an encrypted app nobody asked me to build.
+
+I build things that hold private thoughts. Right now that's Mune, an encrypted chat and journal app I've been working on since the start of 2025. Before that I spent four years designing and shipping client websites under my own name.
+
+## Work
+
+- [Mune](https://haugendesign.no/work/mune): An end-to-end encrypted app for thinking out loud. Chat, and a journal attached to it. The server holds a blob it can't read. Live at https://mune.so
+- [Mobitech](https://www.mobitech.no): The public site for a Norwegian maritime software company. Design through deployment, plus the CMS their staff edit it with.
+
+## Experience
+
+- [Frontend Developer, Videocation](https://haugendesign.no/experience/videocation)
+
+## Education
+
+- [BSc Civil Engineering, Lund University](https://haugendesign.no/education/bsc-civil-engineering)
+- [Art History, Lund University](https://haugendesign.no/education/art-history)
+- [Product Development, Malmö University](https://haugendesign.no/education/product-development)
+- [Media & Communication, Lund University](https://haugendesign.no/education/media-communication)
+
+## Contact
+
+- Email: fredrik@haugendesign.net
+- GitHub: https://github.com/FredrikHaugen
+- LinkedIn: https://www.linkedin.com/in/fredrik-haugen

@@ -1,23 +1,75 @@
 import Link from "next/link";
 import { client } from "@/sanity/client";
-import { HOME_QUERY, type HomeData } from "@/sanity/queries";
+import { HOME_QUERY, type About as AboutData, type HomeData } from "@/sanity/queries";
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
 import { Credentials } from "@/components/Credentials";
 import { Hero } from "@/components/Hero";
+import { JsonLd } from "@/components/JsonLd";
 import { LogoMark } from "@/components/LogoMark";
 import { Other } from "@/components/Other";
 import { Work } from "@/components/Work";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 const options = { next: { revalidate: 3600 } };
 
 const navLinkClass = "transition-colors duration-150 hover:text-ink";
+
+function personJsonLd(about: AboutData) {
+  const institutions = [
+    ...new Set(about.education?.map((entry) => entry.institution).filter(Boolean)),
+  ] as string[];
+  return {
+    "@type": "Person",
+    "@id": `${SITE_URL}/#person`,
+    name: about.name,
+    url: SITE_URL,
+    description: about.shortBio ?? undefined,
+    jobTitle: about.work?.[0]?.role,
+    email: about.email ? `mailto:${about.email}` : undefined,
+    address: about.location ?? undefined,
+    sameAs: [about.github, about.linkedin, about.instagram, about.threads, about.x].filter(
+      Boolean
+    ),
+    knowsAbout: about.skills?.flatMap((group) => group.items?.split(", ") ?? []),
+    worksFor: about.work
+      ?.filter((entry) => entry.dates?.includes("Present"))
+      .map((entry) => ({ "@type": "Organization", name: entry.org })),
+    alumniOf: institutions.map((name) => ({
+      "@type": "EducationalOrganization",
+      name,
+    })),
+  };
+}
 
 export default async function HomePage() {
   const { about, projects, other } = await client.fetch<HomeData>(HOME_QUERY, {}, options);
 
   return (
     <>
+      {about ? (
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "ProfilePage",
+                "@id": `${SITE_URL}/#page`,
+                url: SITE_URL,
+                name: about.name,
+                mainEntity: personJsonLd(about),
+              },
+              {
+                "@type": "WebSite",
+                "@id": `${SITE_URL}/#website`,
+                url: SITE_URL,
+                name: SITE_NAME,
+                publisher: { "@id": `${SITE_URL}/#person` },
+              },
+            ],
+          }}
+        />
+      ) : null}
       <header className="sticky top-0 z-10 border-b border-rule bg-paper">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
           <Link

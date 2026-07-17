@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
+import { OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const newsreader = Newsreader({
@@ -15,13 +16,38 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
+const description = "I build things that hold private thoughts.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://haugendesign.no"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Fredrik Haugen",
-    template: "%s. Fredrik Haugen",
+    default: OWNER_NAME,
+    template: `%s. ${OWNER_NAME}`,
   },
-  description: "I build things that hold private thoughts.",
+  description,
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: SITE_NAME,
+    title: OWNER_NAME,
+    description,
+    locale: "en_US",
+    images: [
+      {
+        url: "/og/home.jpg",
+        width: 1200,
+        height: 630,
+        alt: "The Mune site on a laptop and a phone.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: OWNER_NAME,
+    description,
+    images: ["/og/home.jpg"],
+  },
 };
 
 export default function RootLayout({

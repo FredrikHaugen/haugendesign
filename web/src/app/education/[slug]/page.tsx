@@ -7,6 +7,8 @@ import {
   type EducationDetail,
 } from "@/sanity/queries";
 import { CredentialDetail } from "@/components/CredentialDetail";
+import { JsonLd } from "@/components/JsonLd";
+import { OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const options = { next: { revalidate: 3600 } };
 
@@ -23,9 +25,20 @@ export async function generateMetadata({
   const { slug } = await params;
   const entry = await client.fetch<EducationDetail | null>(EDUCATION_QUERY, { slug }, options);
   if (!entry) return {};
+  const title = [entry.degree, entry.institution].filter(Boolean).join(", ");
+  const description = [entry.institution, entry.years].filter(Boolean).join(" · ");
   return {
-    title: entry.degree,
-    description: [entry.institution, entry.years].filter(Boolean).join(" · "),
+    title,
+    description,
+    alternates: { canonical: `/education/${slug}` },
+    openGraph: {
+      type: "website",
+      url: `/education/${slug}`,
+      siteName: SITE_NAME,
+      title,
+      description,
+    },
+    twitter: { card: "summary", title, description },
   };
 }
 
@@ -39,11 +52,49 @@ export default async function EducationPage({
   if (!entry) notFound();
 
   return (
-    <CredentialDetail
-      title={entry.degree}
-      meta={[entry.institution, entry.years].filter(Boolean).join(" · ")}
-      detail={entry.detail}
-      url={entry.url}
-    />
+    <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "@id": `${SITE_URL}/education/${slug}`,
+              url: `${SITE_URL}/education/${slug}`,
+              name: [entry.degree, entry.institution].filter(Boolean).join(", "),
+              about: {
+                "@type": "EducationalOrganization",
+                name: entry.institution ?? undefined,
+                url: entry.url ?? undefined,
+              },
+              author: {
+                "@type": "Person",
+                "@id": `${SITE_URL}/#person`,
+                name: OWNER_NAME,
+                url: SITE_URL,
+              },
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: SITE_NAME, item: SITE_URL },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: entry.degree,
+                  item: `${SITE_URL}/education/${slug}`,
+                },
+              ],
+            },
+          ],
+        }}
+      />
+      <CredentialDetail
+        title={entry.degree}
+        meta={[entry.institution, entry.years].filter(Boolean).join(" · ")}
+        detail={entry.detail}
+        url={entry.url}
+      />
+    </>
   );
 }

@@ -5,10 +5,12 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import { client } from "@/sanity/client";
 import { DETAIL_SLUGS_QUERY, PROJECT_QUERY, type ProjectDetail } from "@/sanity/queries";
+import { JsonLd } from "@/components/JsonLd";
 import { LogoMark } from "@/components/LogoMark";
 import { PortableTextBody } from "@/components/PortableTextBody";
-import { projectMedia } from "@/components/projectMedia";
+import { projectMedia, projectOgImage } from "@/components/projectMedia";
 import { Reveal } from "@/components/Reveal";
+import { OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const options = { next: { revalidate: 3600 } };
 
@@ -25,7 +27,26 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = await client.fetch<ProjectDetail | null>(PROJECT_QUERY, { slug }, options);
   if (!project) return {};
-  return { title: project.title, description: project.card };
+  const og = projectOgImage[slug];
+  return {
+    title: project.title,
+    description: project.card,
+    alternates: { canonical: `/work/${slug}` },
+    openGraph: {
+      type: "website",
+      url: `/work/${slug}`,
+      siteName: SITE_NAME,
+      title: project.title,
+      description: project.card,
+      images: og ? [{ url: og.url, width: 1200, height: 630, alt: og.alt }] : undefined,
+    },
+    twitter: {
+      card: og ? "summary_large_image" : "summary",
+      title: project.title,
+      description: project.card,
+      images: og ? [og.url] : undefined,
+    },
+  };
 }
 
 export default async function ProjectPage({
@@ -57,6 +78,42 @@ export default async function ProjectPage({
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "CreativeWork",
+              "@id": `${SITE_URL}/work/${slug}#work`,
+              name: project.title,
+              description: project.card,
+              url: `${SITE_URL}/work/${slug}`,
+              sameAs: project.url,
+              image: projectOgImage[slug]
+                ? `${SITE_URL}${projectOgImage[slug].url}`
+                : undefined,
+              author: {
+                "@type": "Person",
+                "@id": `${SITE_URL}/#person`,
+                name: OWNER_NAME,
+                url: SITE_URL,
+              },
+            },
+            {
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                { "@type": "ListItem", position: 1, name: SITE_NAME, item: SITE_URL },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: project.title,
+                  item: `${SITE_URL}/work/${slug}`,
+                },
+              ],
+            },
+          ],
+        }}
+      />
       <header className="sticky top-0 z-10 border-b border-rule bg-paper">
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
           <Link

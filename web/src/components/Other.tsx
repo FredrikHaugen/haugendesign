@@ -22,7 +22,7 @@ export function Other({ other }: { other: OtherProject[] }) {
                 <li key={item._id}>
                   <a
                     href={item.url}
-                    rel="noreferrer"
+                    target="_blank" rel="noopener noreferrer"
                     className="group flex items-baseline justify-between gap-6 border-b border-rule py-5 transition-colors duration-150 hover:text-accent"
                   >
                     <span className="flex items-baseline gap-5">

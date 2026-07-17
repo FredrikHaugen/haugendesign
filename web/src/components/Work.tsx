@@ -73,7 +73,7 @@ export function Work({ projects }: { projects: ProjectCard[] }) {
                           <ProjectImage project={project} />
                         </Link>
                       ) : (
-                        <a href={project.url} rel="noreferrer" className={mediaLinkClass}>
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" className={mediaLinkClass}>
                           <ProjectImage project={project} />
                         </a>
                       )}
@@ -99,7 +99,7 @@ export function Work({ projects }: { projects: ProjectCard[] }) {
                           />
                         </Link>
                       ) : (
-                        <a href={project.url} rel="noreferrer" className={titleLinkClass}>
+                        <a href={project.url} target="_blank" rel="noopener noreferrer" className={titleLinkClass}>
                           {project.title}
                           <ArrowUpRight
                             aria-hidden
@@ -119,7 +119,7 @@ export function Work({ projects }: { projects: ProjectCard[] }) {
                       <p className="mt-6">
                         <a
                           href={project.url}
-                          rel="noreferrer"
+                          target="_blank" rel="noopener noreferrer"
                           className="group inline-flex items-center gap-1 text-sm text-accent transition-opacity duration-150 hover:opacity-70"
                         >
                           <span className="underline decoration-1 underline-offset-4">

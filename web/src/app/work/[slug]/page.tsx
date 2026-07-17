@@ -64,7 +64,7 @@ export default async function ProjectPage({
   const externalLink = (
     <a
       href={project.url}
-      rel="noreferrer"
+      target="_blank" rel="noopener noreferrer"
       className="group inline-flex items-center gap-1 text-accent transition-opacity duration-150 hover:opacity-70"
     >
       <span className="underline decoration-1 underline-offset-4">{displayUrl}</span>

@@ -41,7 +41,7 @@ export function Contact({ about }: { about: About }) {
             ) : null}
             {about.github ? (
               <li>
-                <a className={linkClass} href={about.github} rel="noreferrer">
+                <a className={linkClass} href={about.github} target="_blank" rel="noopener noreferrer">
                   <GithubLogo aria-hidden size={18} />
                   <span className={labelClass}>GitHub</span>
                 </a>
@@ -49,7 +49,7 @@ export function Contact({ about }: { about: About }) {
             ) : null}
             {about.linkedin ? (
               <li>
-                <a className={linkClass} href={about.linkedin} rel="noreferrer">
+                <a className={linkClass} href={about.linkedin} target="_blank" rel="noopener noreferrer">
                   <LinkedinLogo aria-hidden size={18} />
                   <span className={labelClass}>LinkedIn</span>
                 </a>
@@ -57,7 +57,7 @@ export function Contact({ about }: { about: About }) {
             ) : null}
             {about.instagram ? (
               <li>
-                <a className={linkClass} href={about.instagram} rel="noreferrer">
+                <a className={linkClass} href={about.instagram} target="_blank" rel="noopener noreferrer">
                   <InstagramLogo aria-hidden size={18} />
                   <span className={labelClass}>Instagram</span>
                 </a>
@@ -65,7 +65,7 @@ export function Contact({ about }: { about: About }) {
             ) : null}
             {about.threads ? (
               <li>
-                <a className={linkClass} href={about.threads} rel="noreferrer">
+                <a className={linkClass} href={about.threads} target="_blank" rel="noopener noreferrer">
                   <ThreadsLogo aria-hidden size={18} />
                   <span className={labelClass}>Threads</span>
                 </a>
@@ -73,7 +73,7 @@ export function Contact({ about }: { about: About }) {
             ) : null}
             {about.x ? (
               <li>
-                <a className={linkClass} href={about.x} rel="noreferrer">
+                <a className={linkClass} href={about.x} target="_blank" rel="noopener noreferrer">
                   <XLogo aria-hidden size={18} />
                   <span className={labelClass}>X</span>
                 </a>

@@ -15,7 +15,8 @@ const components: PortableTextComponents = {
       return (
         <a
           href={href}
-          rel={external ? "noreferrer" : undefined}
+          target={external ? "_blank" : undefined}
+          rel={external ? "noopener noreferrer" : undefined}
           className="text-accent underline decoration-1 underline-offset-4 transition-opacity duration-150 hover:opacity-70"
         >
           {children}

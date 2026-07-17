@@ -38,6 +38,24 @@ export const project = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'instagram',
+      title: 'Instagram URL',
+      type: 'url',
+      description: "The product's own account, not a personal one. Shown on the detail page.",
+    }),
+    defineField({
+      name: 'threads',
+      title: 'Threads URL',
+      type: 'url',
+      description: "The product's own account, not a personal one. Shown on the detail page.",
+    }),
+    defineField({
+      name: 'x',
+      title: 'X URL',
+      type: 'url',
+      description: "The product's own account, not a personal one. Shown on the detail page.",
+    }),
+    defineField({
       name: 'year',
       type: 'number',
       description: 'From the rules file. Leave empty while it is an unresolved CONFIRM.',

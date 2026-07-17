@@ -2,7 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  InstagramLogo,
+  ThreadsLogo,
+  XLogo,
+} from "@phosphor-icons/react/dist/ssr";
 import { client } from "@/sanity/client";
 import { DETAIL_SLUGS_QUERY, PROJECT_QUERY, type ProjectDetail } from "@/sanity/queries";
 import { JsonLd } from "@/components/JsonLd";
@@ -61,6 +67,16 @@ export default async function ProjectPage({
   const displayUrl = project.url.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const [heroImage, ...moreImages] = projectMedia[slug] ?? [];
 
+  // The product's own social accounts, not personal ones.
+  const socials = [
+    { href: project.instagram, label: "Instagram", Icon: InstagramLogo },
+    { href: project.threads, label: "Threads", Icon: ThreadsLogo },
+    { href: project.x, label: "X", Icon: XLogo },
+  ].filter((account): account is { href: string; label: string; Icon: typeof XLogo } =>
+    Boolean(account.href)
+  );
+  const sameAs = [project.url, project.instagram, project.threads, project.x].filter(Boolean);
+
   const externalLink = (
     <a
       href={project.url}
@@ -88,7 +104,7 @@ export default async function ProjectPage({
               name: project.title,
               description: project.card,
               url: `${SITE_URL}/work/${slug}`,
-              sameAs: project.url,
+              sameAs,
               image: projectOgImage[slug]
                 ? `${SITE_URL}${projectOgImage[slug].url}`
                 : undefined,
@@ -138,32 +154,34 @@ export default async function ProjectPage({
       </header>
       <main id="main" className="mx-auto w-full max-w-6xl px-6 pb-24 pt-12 md:pt-16">
         <article>
-          <Reveal>
-            <h1 className="font-display text-5xl font-light leading-display tracking-display md:text-7xl">
-              {project.title}
-            </h1>
-          </Reveal>
+          {/* Above the fold: CSS .hero-rise load animation, not the IO Reveal,
+              so the title and hero image (the LCP element) paint at first
+              paint. Below-fold blocks keep the scroll-triggered Reveal. */}
+          <h1 className="hero-rise font-display text-5xl font-light leading-display tracking-display md:text-7xl">
+            {project.title}
+          </h1>
           {heroImage ? (
-            <Reveal className="mt-12" delay={150}>
-              <div className="media-reveal border border-rule">
-                <Image
-                  src={heroImage.src}
-                  alt={heroImage.alt}
-                  preload
-                  placeholder="blur"
-                  sizes="(min-width: 1152px) 72rem, 100vw"
-                  className="h-auto w-full"
-                />
-              </div>
-            </Reveal>
+            <div
+              className="hero-rise mt-12 border border-rule"
+              style={{ animationDelay: "150ms" }}
+            >
+              <Image
+                src={heroImage.src}
+                alt={heroImage.alt}
+                preload
+                placeholder="blur"
+                sizes="(min-width: 1152px) 72rem, 100vw"
+                className="h-auto w-full"
+              />
+            </div>
           ) : null}
           <div className="mt-14 lg:grid lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">
-              <Reveal>
-                <div className="body-lead max-w-content">
-                  <PortableTextBody value={project.detail} />
-                </div>
-              </Reveal>
+              {/* Above-the-fold body is the LCP on image-light projects, so it
+                  uses the CSS load animation instead of the JS-gated Reveal. */}
+              <div className="hero-rise body-lead max-w-content">
+                <PortableTextBody value={project.detail} />
+              </div>
             </div>
             <aside className="mt-14 lg:col-span-4 lg:col-start-9 lg:mt-0">
               <Reveal delay={100} className="lg:sticky lg:top-24">
@@ -176,6 +194,28 @@ export default async function ProjectPage({
                   </>
                 ) : null}
                 <p className="mt-10">{externalLink}</p>
+                {socials.length > 0 ? (
+                  <div className="mt-10 border-t border-rule pt-6">
+                    <h2 className="text-sm text-ink-dim">{project.title} accounts</h2>
+                    <ul className="mt-4 space-y-2">
+                      {socials.map(({ href, label, Icon }) => (
+                        <li key={label}>
+                          <a
+                            href={href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="group inline-flex items-center gap-2 text-accent transition-opacity duration-150 hover:opacity-70"
+                          >
+                            <Icon aria-hidden size={16} />
+                            <span className="underline decoration-1 underline-offset-4">
+                              {label}
+                            </span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
               </Reveal>
             </aside>
           </div>

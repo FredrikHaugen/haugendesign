@@ -1,11 +1,4 @@
-import {
-  EnvelopeSimple,
-  GithubLogo,
-  InstagramLogo,
-  LinkedinLogo,
-  ThreadsLogo,
-  XLogo,
-} from "@phosphor-icons/react/dist/ssr";
+import { EnvelopeSimple, GithubLogo, LinkedinLogo } from "@phosphor-icons/react/dist/ssr";
 import type { About } from "@/sanity/queries";
 import { Reveal } from "./Reveal";
 
@@ -52,30 +45,6 @@ export function Contact({ about }: { about: About }) {
                 <a className={linkClass} href={about.linkedin} target="_blank" rel="noopener noreferrer">
                   <LinkedinLogo aria-hidden size={18} />
                   <span className={labelClass}>LinkedIn</span>
-                </a>
-              </li>
-            ) : null}
-            {about.instagram ? (
-              <li>
-                <a className={linkClass} href={about.instagram} target="_blank" rel="noopener noreferrer">
-                  <InstagramLogo aria-hidden size={18} />
-                  <span className={labelClass}>Instagram</span>
-                </a>
-              </li>
-            ) : null}
-            {about.threads ? (
-              <li>
-                <a className={linkClass} href={about.threads} target="_blank" rel="noopener noreferrer">
-                  <ThreadsLogo aria-hidden size={18} />
-                  <span className={labelClass}>Threads</span>
-                </a>
-              </li>
-            ) : null}
-            {about.x ? (
-              <li>
-                <a className={linkClass} href={about.x} target="_blank" rel="noopener noreferrer">
-                  <XLogo aria-hidden size={18} />
-                  <span className={labelClass}>X</span>
                 </a>
               </li>
             ) : null}

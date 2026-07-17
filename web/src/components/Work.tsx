@@ -63,7 +63,7 @@ export function Work({ projects }: { projects: ProjectCard[] }) {
 
             return (
               <Reveal key={project._id}>
-                <article className="grid items-end gap-8 lg:grid-cols-12 lg:gap-12">
+                <article className="grid grid-cols-1 items-end gap-8 lg:grid-cols-12 lg:gap-12">
                   {hasImage ? (
                     <div
                       className={`media-reveal lg:col-span-7 ${flipped ? "lg:order-2" : ""}`}

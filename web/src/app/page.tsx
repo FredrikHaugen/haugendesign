@@ -13,7 +13,10 @@ import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 const options = { next: { revalidate: 3600 } };
 
-const navLinkClass = "transition-colors duration-150 hover:text-ink";
+// inline-flex + py-1 gives each link a >=24px tap target (WCAG 2.5.8);
+// -my-1 keeps the header's visual height unchanged.
+const navLinkClass =
+  "inline-flex items-center -my-1 py-1 transition-colors duration-150 hover:text-ink";
 
 function personJsonLd(about: AboutData) {
   const institutions = [
@@ -28,9 +31,7 @@ function personJsonLd(about: AboutData) {
     jobTitle: about.work?.[0]?.role,
     email: about.email ? `mailto:${about.email}` : undefined,
     address: about.location ?? undefined,
-    sameAs: [about.github, about.linkedin, about.instagram, about.threads, about.x].filter(
-      Boolean
-    ),
+    sameAs: [about.github, about.linkedin].filter(Boolean),
     knowsAbout: about.skills?.flatMap((group) => group.items?.split(", ") ?? []),
     worksFor: about.work
       ?.filter((entry) => entry.dates?.includes("Present"))
@@ -74,17 +75,24 @@ export default async function HomePage() {
         <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4">
           <Link
             href="/"
+            aria-label="haugendesign, home"
             className="flex items-center gap-3 text-sm transition-opacity duration-150 hover:opacity-70"
           >
             <LogoMark className="h-5 text-ink" />
-            <span>haugendesign</span>
+            {/* Wordmark hidden below sm so the four nav items fit on one line
+                instead of wrapping into a block; the logo mark still brands it.
+                The link's name comes from aria-label so it survives the hide. */}
+            <span className="hidden sm:inline">haugendesign</span>
           </Link>
-          <nav className="flex gap-6 text-sm text-ink-dim">
+          <nav className="flex gap-5 text-sm text-ink-dim sm:gap-6">
             <a href="#work" className={navLinkClass}>
               Work
             </a>
             <a href="#about" className={navLinkClass}>
               About
+            </a>
+            <a href="#credentials" className={navLinkClass}>
+              Credentials
             </a>
             <a href="#contact" className={navLinkClass}>
               Contact

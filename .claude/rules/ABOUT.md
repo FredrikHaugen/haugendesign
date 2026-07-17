@@ -82,5 +82,6 @@ Institution paragraphs:
 
 ## Contact
 
+Personal contact only. The Instagram / Threads / X accounts are Mune's, not Fredrik's — they live on the Mune project page (see `mune.md`), never in this Contact section.
+
 Email: fredrik@haugendesign.net GitHub: github.com/FredrikHaugen LinkedIn: https://www.linkedin.com/in/fredrik-haugen
-Instagram: @mune.so Threads: @mune.so X: @mune_so

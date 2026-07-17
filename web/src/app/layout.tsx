@@ -3,10 +3,13 @@ import { Inter, Newsreader } from "next/font/google";
 import { OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
+// The hero heading (the LCP element) is set in Newsreader. "optional" lets it
+// paint in the metric-matched fallback at first paint rather than blocking on
+// the font download; adjustFontFallback (next/font default) keeps CLS at 0.
 const newsreader = Newsreader({
   subsets: ["latin"],
   style: ["normal", "italic"],
-  display: "swap",
+  display: "optional",
   variable: "--font-newsreader",
 });
 

@@ -149,12 +149,50 @@
   .reveal.is-revealed .media-reveal {
     clip-path: inset(0 0 0 0);
   }
+
+  /* Above-the-fold entrance. Unlike .reveal, this animates on page load via
+     pure CSS, so it does not wait for hydration + IntersectionObserver — the
+     LCP element paints at first paint instead of after the JS bundle runs.
+     Still capability-gated so no-JS renders it fully visible (opacity 1). */
+  .hero-rise {
+    opacity: 0;
+    animation: hero-rise 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Transform-only entrance for the largest element (the name). It never
+     drops to opacity 0, so it stays eligible as the LCP element and is
+     recorded at first paint instead of at animation end. */
+  .hero-rise-solid {
+    animation: hero-rise-solid 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes hero-rise-solid {
+  from {
+    transform: translateY(14px);
+  }
+  to {
+    transform: none;
+  }
 }
 
 /* Unlayered so it beats every utility and component rule above. */
 @media (prefers-reduced-motion: reduce) {
   .reveal,
-  .reveal-child {
+  .reveal-child,
+  .hero-rise,
+  .hero-rise-solid {
     opacity: 1;
     transform: none;
   }

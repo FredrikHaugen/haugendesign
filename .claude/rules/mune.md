@@ -17,6 +17,14 @@ Tags: `Next.js 16` `TypeScript` `Supabase` `Clerk` `Claude API` `Web Crypto` `Tu
 
 Link: https://mune.so
 
+## Accounts
+
+The product's own social accounts. These render on the Mune detail page, framed as Mune's, never in the site's personal Contact section.
+
+Instagram: https://www.instagram.com/mune.so
+Threads: https://www.threads.com/@mune.so
+X: https://x.com/mune_so
+
 ## Detail page
 
 Mune is a chat-first, end-to-end encrypted app for private reflection, with an encrypted journal attached. You talk to an AI that has no name, no persona, and no character. It listens, asks one question at a time or none, and stops. It does not perform empathy at you.

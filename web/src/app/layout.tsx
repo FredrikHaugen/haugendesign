@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: "/og/home.jpg",
         width: 1200,
         height: 630,
-        alt: "The Mune site on a laptop and a phone.",
+        alt: "The haugendesign logo mark.",
       },
     ],
   },

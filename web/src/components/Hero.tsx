@@ -33,7 +33,9 @@ export function Hero({ about }: { about: About }) {
                 }`}
                 style={index ? { transitionDelay: `${index * 140}ms` } : undefined}
               >
-                {word}
+                {/* Trailing space keeps the accessible name "Fredrik Haugen",
+                    not "FredrikHaugen"; display:block hides it visually. */}
+                {word}{" "}
               </span>
             ))}
           </h1>

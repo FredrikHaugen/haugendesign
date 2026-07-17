@@ -18,7 +18,7 @@ Fullstack developer. Oslo. Currently building an encrypted app nobody asked me t
 
 ## Short bio (for hero / meta description)
 
-I build things that hold private thoughts. Right now that's Mune, an encrypted chat and journal app I've been working on since the start of 2025. Before that I spent four years designing and shipping client websites under my own name.
+I build things that hold private thoughts. Right now that's Mune, an encrypted chat and journal app I've been working on since the start of 2026. Before that I spent four years designing and shipping client websites under my own name.
 
 ## Long bio (About section)
 
@@ -26,13 +26,13 @@ I started in design. Client sites, brand identity, the kind of work where the de
 
 The current thing is Mune. It's a chat-and-journal app that's end-to-end encrypted, which means the server holds a blob it can't read. I built it because I kept writing things in Apple Notes at 2 AM and deleting them before morning, and after enough deleted notes it seemed easier to build the thing than to keep pretending it didn't matter.
 
-I ride enduro in the forest north of Oslo. I draw. Neither of those are on this website,
+I ride enduro in the forest north of Oslo. I draw. Neither of those are on this website.
 
 ## Work
 
 ### Founder & Fullstack Developer — Mune
 
-Oslo. 2025 – Present. Encrypted chat and journal app. Next.js 16, Supabase, Clerk, Claude API, Turborepo monorepo, Expo/React Native for iOS. End-to-end encryption: AES-256-GCM, DEK/KEK/KRK key hierarchy, BIP39 recovery phrase, zero-knowledge server. Solo: architecture, product, design, copy, launch.
+Oslo. 2026 – Present. Encrypted chat and journal app. Next.js 16, Supabase, Clerk, Claude API, Turborepo monorepo, Expo/React Native for iOS. End-to-end encryption: AES-256-GCM, DEK/KEK/KRK key hierarchy, BIP39 recovery phrase, zero-knowledge server. Solo: architecture, product, design, copy, launch.
 
 ### Frontend Developer — Videocation
 
@@ -73,6 +73,8 @@ Institution paragraphs:
 2017 – 2018.
 
 ### Media & Communication — Lund University
+
+2018 – 2019.
 
 ## Skills
 

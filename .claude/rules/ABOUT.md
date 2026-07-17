@@ -80,5 +80,5 @@ Institution paragraphs:
 
 ## Contact
 
-Email: CONFIRM: fredrik@haugendesign.net GitHub: github.com/FredrikHaugen LinkedIn: https://www.linkedin.com/in/fredrik-haugen
+Email: fredrik@haugendesign.net GitHub: github.com/FredrikHaugen LinkedIn: https://www.linkedin.com/in/fredrik-haugen
 Instagram: @mune.so Threads: @mune.so X: @mune_so

@@ -39,8 +39,6 @@ export function Contact({ about }: { about: About }) {
                 </a>
               </li>
             ) : null}
-            {/* TODO: copy needed. The email in .claude/rules/ABOUT.md is an unresolved
-                CONFIRM; the mailto renders once the email field is set in Sanity. */}
             {about.github ? (
               <li>
                 <a className={linkClass} href={about.github} rel="noreferrer">

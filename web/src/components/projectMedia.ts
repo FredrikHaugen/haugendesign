@@ -1,4 +1,5 @@
 import type { StaticImageData } from "next/image";
+import localflowPreview from "../../public/photos/local-flow/local-flow_preview.webp";
 import mobitechPreview from "../../public/photos/mobitech/Mobitech_preview.webp";
 import muneIos from "../../public/photos/mune/Mune_iOS_app.webp";
 import munePreview from "../../public/photos/mune/Mune_preview_web.webp";
@@ -18,6 +19,9 @@ export const projectMedia: Record<string, ProjectImage[]> = {
     { src: muneIos, alt: "The Mune iOS app on a phone." },
   ],
   mobitech: [{ src: mobitechPreview, alt: "The Mobitech site on a laptop and a phone." }],
+  localflow: [
+    { src: localflowPreview, alt: "The LocalFlow settings window on a MacBook." },
+  ],
 };
 
 // 1200x630 JPG crops of the first project image, for Open Graph cards.
@@ -25,4 +29,5 @@ export const projectMedia: Record<string, ProjectImage[]> = {
 export const projectOgImage: Record<string, { url: string; alt: string }> = {
   mune: { url: "/og/mune.jpg", alt: "The Mune site on a laptop and a phone." },
   mobitech: { url: "/og/mobitech.jpg", alt: "The Mobitech site on a laptop and a phone." },
+  localflow: { url: "/og/localflow.jpg", alt: "The LocalFlow settings window on a MacBook." },
 };

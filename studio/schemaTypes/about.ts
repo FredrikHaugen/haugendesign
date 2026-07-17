@@ -54,6 +54,26 @@ export const about = defineType({
             defineField({name: 'location', type: 'string'}),
             defineField({name: 'dates', type: 'string'}),
             defineField({name: 'description', type: 'text', rows: 4}),
+            defineField({
+              name: 'slug',
+              type: 'slug',
+              options: {source: 'org'},
+              description: 'Only needed when the entry has a detail body. Gives it /experience/<slug>.',
+            }),
+            defineField({
+              name: 'url',
+              title: 'Organization URL',
+              type: 'url',
+              description: 'Shown on the detail page as an external link.',
+            }),
+            defineField({
+              name: 'detail',
+              title: 'Detail body',
+              type: 'array',
+              of: [defineArrayMember({type: 'block'})],
+              description:
+                'About the organization. Entries with a body get a detail page; the rest render as plain rows.',
+            }),
           ],
           preview: {select: {title: 'role', subtitle: 'org'}},
         }),
@@ -70,6 +90,26 @@ export const about = defineType({
             defineField({name: 'degree', type: 'string', validation: (rule) => rule.required()}),
             defineField({name: 'institution', type: 'string'}),
             defineField({name: 'years', type: 'string'}),
+            defineField({
+              name: 'slug',
+              type: 'slug',
+              options: {source: 'degree'},
+              description: 'Only needed when the entry has a detail body. Gives it /education/<slug>.',
+            }),
+            defineField({
+              name: 'url',
+              title: 'Institution URL',
+              type: 'url',
+              description: 'Shown on the detail page as an external link.',
+            }),
+            defineField({
+              name: 'detail',
+              title: 'Detail body',
+              type: 'array',
+              of: [defineArrayMember({type: 'block'})],
+              description:
+                'About the institution. Entries with a body get a detail page; the rest render as plain rows.',
+            }),
           ],
           preview: {select: {title: 'degree', subtitle: 'institution'}},
         }),

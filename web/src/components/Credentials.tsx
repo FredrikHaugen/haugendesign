@@ -1,7 +1,18 @@
+import Link from "next/link";
+import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import type { About } from "@/sanity/queries";
 import { Reveal } from "./Reveal";
 
 const labelClass = "text-xs uppercase tracking-widest text-ink-dim";
+const entryLinkClass =
+  "group inline-flex items-center gap-2 text-accent transition-opacity duration-150 hover:opacity-70";
+const entryArrow = (
+  <ArrowRight
+    aria-hidden
+    size={14}
+    className="transition-transform duration-150 group-hover:translate-x-0.5"
+  />
+);
 
 export function Credentials({ about }: { about: About }) {
   const hasWork = Boolean(about.work && about.work.length > 0);
@@ -26,7 +37,16 @@ export function Credentials({ about }: { about: About }) {
               <ul className="mt-6 divide-y divide-rule border-t border-rule">
                 {about.work?.map((entry) => (
                   <li key={entry._key} className="py-6">
-                    <p>{entry.role}</p>
+                    <p>
+                      {entry.hasDetail && entry.slug ? (
+                        <Link href={`/experience/${entry.slug}`} className={entryLinkClass}>
+                          {entry.role}
+                          {entryArrow}
+                        </Link>
+                      ) : (
+                        entry.role
+                      )}
+                    </p>
                     <p className="mt-1 text-sm text-ink-dim">
                       {[entry.org, entry.location, entry.dates].filter(Boolean).join(" · ")}
                     </p>
@@ -43,7 +63,16 @@ export function Credentials({ about }: { about: About }) {
                 <ul className="mt-6 divide-y divide-rule border-t border-rule">
                   {about.education?.map((entry) => (
                     <li key={entry._key} className="py-5">
-                      <p>{entry.degree}</p>
+                      <p>
+                        {entry.hasDetail && entry.slug ? (
+                          <Link href={`/education/${entry.slug}`} className={entryLinkClass}>
+                            {entry.degree}
+                            {entryArrow}
+                          </Link>
+                        ) : (
+                          entry.degree
+                        )}
+                      </p>
                       <p className="mt-1 text-sm text-ink-dim">
                         {[entry.institution, entry.years].filter(Boolean).join(" · ")}
                       </p>

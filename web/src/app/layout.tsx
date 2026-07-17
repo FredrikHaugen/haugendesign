@@ -31,7 +31,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${newsreader.variable} ${inter.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        {/* Lives in the layout, not the pages: Next focuses the new segment's
+            first element on client navigation, and the skip link must not be it. */}
+        <a
+          href="#main"
+          className="sr-only focus-visible:not-sr-only focus-visible:absolute focus-visible:left-6 focus-visible:top-6 focus-visible:z-20 focus-visible:bg-paper focus-visible:px-4 focus-visible:py-2"
+        >
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

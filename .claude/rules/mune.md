@@ -27,7 +27,7 @@ Everything is encrypted in the browser before it touches a network. The database
 
 Privacy, not as a promise, but as architecture.
 
-I'm building it alone. Architecture, product, design, copy, the encryption layer, the mobile client, the words on the marketing site. Pre-alpha, waitlist open.
+I'm building it alone. Architecture, product, design, copy, the encryption layer, the mobile client, the words on the marketing site. Web app in beta. iOS waitlist open.
 
 [CONFIRM: one sentence here about what's hard about it, in your words. Right now this reads like it went well. It didn't. That's more interesting than the spec.]
 

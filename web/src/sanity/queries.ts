@@ -8,8 +8,16 @@ export const HOME_QUERY = defineQuery(`{
     oneLiner,
     shortBio,
     longBio,
-    work[]{ _key, role, org, location, dates, description },
-    education[]{ _key, degree, institution, years },
+    work[]{
+      _key, role, org, location, dates, description,
+      "slug": slug.current,
+      "hasDetail": count(coalesce(detail, [])) > 0
+    },
+    education[]{
+      _key, degree, institution, years,
+      "slug": slug.current,
+      "hasDetail": count(coalesce(detail, [])) > 0
+    },
     skills[]{ _key, category, items },
     email,
     github,
@@ -52,6 +60,26 @@ export const DETAIL_SLUGS_QUERY = defineQuery(
   `*[_type == "project" && defined(slug.current) && count(coalesce(detail, [])) > 0].slug.current`
 );
 
+export const EXPERIENCE_QUERY = defineQuery(
+  `*[_type == "about"][0].work[slug.current == $slug && count(coalesce(detail, [])) > 0][0]{
+    role, org, location, dates, description, url, detail
+  }`
+);
+
+export const EXPERIENCE_SLUGS_QUERY = defineQuery(
+  `*[_type == "about"][0].work[defined(slug.current) && count(coalesce(detail, [])) > 0].slug.current`
+);
+
+export const EDUCATION_QUERY = defineQuery(
+  `*[_type == "about"][0].education[slug.current == $slug && count(coalesce(detail, [])) > 0][0]{
+    degree, institution, years, url, detail
+  }`
+);
+
+export const EDUCATION_SLUGS_QUERY = defineQuery(
+  `*[_type == "about"][0].education[defined(slug.current) && count(coalesce(detail, [])) > 0].slug.current`
+);
+
 export interface WorkEntry {
   _key: string;
   role: string;
@@ -59,6 +87,8 @@ export interface WorkEntry {
   location: string | null;
   dates: string | null;
   description: string | null;
+  slug: string | null;
+  hasDetail: boolean;
 }
 
 export interface EducationEntry {
@@ -66,6 +96,26 @@ export interface EducationEntry {
   degree: string;
   institution: string | null;
   years: string | null;
+  slug: string | null;
+  hasDetail: boolean;
+}
+
+export interface ExperienceDetail {
+  role: string;
+  org: string | null;
+  location: string | null;
+  dates: string | null;
+  description: string | null;
+  url: string | null;
+  detail: PortableTextBlock[];
+}
+
+export interface EducationDetail {
+  degree: string;
+  institution: string | null;
+  years: string | null;
+  url: string | null;
+  detail: PortableTextBlock[];
 }
 
 export interface SkillGroup {

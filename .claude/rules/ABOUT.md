@@ -38,11 +38,27 @@ Oslo. 2025 – Present. Encrypted chat and journal app. Next.js 16, Supabase, Cl
 
 Oslo. Feb 2024 – Present. Design and maintain platform frontend. Next.js, Sanity CMS. Performance, responsive layouts, scalable CMS architecture.
 
+Detail page (`/experience/videocation`): Videocation is a Norwegian learning platform for workplace training. Video courses produced with Norwegian industry experts, used by more than 200 companies. Link: https://videocation.no
+
 ### Graphic Designer & Web Developer — haugendesign
 
 Oslo. Nov 2020 – Feb 2024. Client websites end-to-end. React, Sanity, TailwindCSS. Brand identity through to deployment.
 
 ## Education
+
+Each education detail page carries a program paragraph followed by an institution paragraph.
+
+Program paragraphs:
+
+- `/education/bsc-civil-engineering`: Civil engineering at Lund is taught at LTH, the university's faculty of engineering, founded in 1961 and today close to 10,000 students. The subject covers the built environment: structures, infrastructure, mechanics and materials.
+- `/education/art-history`: Art history at Lund is taught by the Department of Arts and Cultural Sciences. A full-time year covers the art, architecture and design history of the Western world, with theory and methodology.
+- `/education/product-development`: Product development at Malmö is at its core a mechanical engineering education with clear elements of product design.
+- `/education/media-communication`: Media and communication studies at Lund is taught by the Department of Communication. How news is created, what the internet means for democracy, how attitudes form. The subject trains communication analysts rather than producers.
+
+Institution paragraphs:
+
+- Lund University (`/education/bsc-civil-engineering`, `/education/art-history`, `/education/media-communication`): Lund University was founded in 1666 and is one of Scandinavia's oldest universities, with around 46,000 students. Link: https://www.lunduniversity.lu.se
+- Malmö University (`/education/product-development`): Malmö University was founded in 1998 and has around 24,000 students. Link: https://mau.se
 
 ### BSc Civil Engineering — Lund University
 

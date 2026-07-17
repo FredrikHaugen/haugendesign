@@ -34,7 +34,7 @@ There are no tests in either package.
 
 ## Project Rules (`.claude/rules/`)
 
-Six files that constrain what gets built and what may be published. They auto-load as project instructions. Read the relevant one before writing copy, styling anything, or shipping a project page.
+Seven files plus one internal-doc directory that constrain what gets built and what may be published. They auto-load as project instructions. Read the relevant one before writing copy, styling anything, or shipping a project page.
 
 | File | What it governs |
 |---|---|
@@ -57,7 +57,8 @@ The copy in these files is the input to Sanity, entered verbatim. **Do not write
 ## Sanity Architecture
 
 - Project ID `73tyvgdh`, dataset `production` (publicly readable). Hardcoded in `studio/sanity.config.ts` and `studio/sanity.cli.ts`; the web app reads them from `web/.env.local` (`NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`) — that file is gitignored and must exist or the app crashes at startup.
-- Content flow: schema types live in `studio/schemaTypes/` (one file per type, registered in `index.ts`) → deploy schema → `web` fetches with the shared client in `web/src/sanity/client.ts` and the queries in `web/src/sanity/queries.ts` → the one-page portfolio at `web/src/app/page.tsx` plus detail routes at `web/src/app/work/[slug]/page.tsx`. Only projects with a non-empty `detail` body get a route; the others' cards link straight to their live URL.
+- Content flow: schema types live in `studio/schemaTypes/` (one file per type, registered in `index.ts`) → deploy schema → `web` fetches with the shared client in `web/src/sanity/client.ts` and the queries in `web/src/sanity/queries.ts` → the one-page portfolio at `web/src/app/page.tsx` plus detail routes at `/work/[slug]` (projects), `/experience/[slug]` (work-history entries), and `/education/[slug]` (education entries). In every case the filter is the same: only documents/entries with a non-empty `detail` body get a route; the rest render as cards or plain rows.
+- Content can be edited from the CLI (logged-in `sanity` CLI, run inside `studio/`): `npx sanity documents get <id>` → edit the JSON → `npx sanity documents create <file> --replace`. Two gotchas after any content write: the Sanity CDN can lag a write by up to a minute (verify via `73tyvgdh.apicdn.sanity.io` before building), and Next persists its data cache across builds in `web/.next/cache/fetch-cache` — delete it or the rebuild bakes the stale content.
 - In `web`, import all Sanity utilities (`createClient`, `defineQuery`, `PortableText`, `SanityDocument`) from `next-sanity` — do not add `@sanity/client`, `groq`, or `@portabletext/react` as direct dependencies. `@sanity/image-url` is the one separate Sanity package.
 - The `sanity-best-practices` skill is installed at `.agents/skills/sanity-best-practices/` (symlinked into `.claude/skills/`). Use it for any Sanity work — schema design, GROQ, Visual Editing, TypeGen, etc.
 

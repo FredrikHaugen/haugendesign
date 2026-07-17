@@ -25,7 +25,7 @@ Project ID `73tyvgdh` and dataset `production` are hardcoded in both `sanity.con
 One file per document type in `schemaTypes/`, named after the type, exporting a `defineType` result registered in `schemaTypes/index.ts`:
 
 - `project.ts` — work card plus optional detail page. An empty `detail` body means the card links straight to the live URL and no `/work/<slug>` route exists on the site; the web app filters on `count(coalesce(detail, [])) > 0`.
-- `about.ts` — singleton. `sanity.config.ts` pins it in the structure to document ID `about`; keep that ID if you touch the structure.
+- `about.ts` — singleton. `sanity.config.ts` pins it in the structure to document ID `about`; keep that ID if you touch the structure. Its `workEntry` and `educationEntry` array items carry optional `slug`, `url`, and `detail` fields: an entry with a detail body gets a `/experience/<slug>` or `/education/<slug>` page on the site (same `count(coalesce(detail, [])) > 0` filter); the rest render as plain rows.
 - `otherProject.ts` — one line in the Other section, not a work card.
 
 Field `description`s in these schemas carry editorial rules from `.claude/rules/` ("Verbatim from the project file", "Leave empty until the address is confirmed"). They are load-bearing instructions to the editor — keep them accurate when editing fields, and give new fields the same treatment.
@@ -33,6 +33,8 @@ Field `description`s in these schemas carry editorial rules from `.claude/rules/
 The desk structure in `sanity.config.ts` is hand-built (`structureTool` with an explicit list); a new document type must be added there as well as in `schemaTypes/index.ts` or it won't appear in the Studio.
 
 Content itself never lives in this repo. Copy is written in `.claude/rules/` and entered into the Studio verbatim; the `## Claim check` / `## Permission check` / `## Do not publish` sections of those files must never be entered into Sanity.
+
+Content can also be entered from the CLI (must run inside `studio/` so `sanity.cli.ts` is found, with a logged-in `sanity` CLI): `npx sanity documents get <id>` → edit the JSON (drop `_rev`/`_createdAt`/`_updatedAt`) → `npx sanity documents create <file> --replace`. Omit `_id` on `create` to let Sanity generate one. Check for `drafts.<id>` first; replacing a published document under an open draft will confuse the Studio.
 
 ## Code style
 

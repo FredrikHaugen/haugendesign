@@ -7,6 +7,7 @@ I build things that hold private thoughts. Right now that's Mune, an encrypted c
 ## Work
 
 - [Mune](https://haugendesign.no/work/mune): An end-to-end encrypted app for thinking out loud. Chat, and a journal attached to it. The server holds a blob it can't read. Live at https://mune.so
+- [LocalFlow](https://haugendesign.no/work/localflow): Fully-local voice dictation for macOS. Hold a hotkey anywhere, speak, release. Clean, formatted text appears in whatever app you're using. No cloud, no accounts, no telemetry. Source at https://github.com/FredrikHaugen/whispr-local
 - [Mobitech](https://www.mobitech.no): The public site for a Norwegian maritime software company. Design through deployment, plus the CMS their staff edit it with.
 
 ## Experience

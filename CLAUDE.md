@@ -41,6 +41,7 @@ Six files that constrain what gets built and what may be published. They auto-lo
 | [`ABOUT.md`](.claude/rules/ABOUT.md) | Source copy: bio, work history, education, skills, contact. |
 | [`mune.md`](.claude/rules/mune.md) | Source copy for the Mune project page. **Carries a publishing blocker.** |
 | [`mobitech.md`](.claude/rules/mobitech.md) | Source copy for the Mobitech project page. **Carries a publishing blocker.** |
+| [`localflow.md`](.claude/rules/localflow.md) | Source copy for the LocalFlow project page, extracted from the internal doc in [`local-flow/`](.claude/rules/local-flow/). |
 | [`brand.md`](.claude/rules/brand.md) | Design system: palette, type, layout, motion. Explicitly a proposal Fredrik can overrule. |
 | [`build.md`](.claude/rules/build.md) | Architecture: stack, content model, rendering, definition of done. |
 | [`tov.md`](.claude/rules/tov.md) | Tone of voice: hard bans, banned vocabulary, and Mune claim boundaries. |

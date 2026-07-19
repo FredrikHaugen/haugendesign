@@ -31,7 +31,7 @@ Names, jargon, and technical terms that speech models routinely butcher get two 
 
 Version 0.1.0.
 
-[CONFIRM: the internal doc frames this as "the Wispr Flow experience" with local processing. Naming a competitor's product on the portfolio is your call, and the TOV bans it for Mune. The copy above omits it; add the sentence yourself if you want the comparison.]
+[CONFIRM: the internal doc frames this as "the Wispr Flow experience" with local processing. Naming a competitor's product on the portfolio is your call, and the TOV bans it for Vitne. The copy above omits it; add the sentence yourself if you want the comparison.]
 
 ### Stack
 

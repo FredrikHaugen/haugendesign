@@ -39,18 +39,18 @@ Seven files plus one internal-doc directory that constrain what gets built and w
 | File | What it governs |
 |---|---|
 | [`ABOUT.md`](.claude/rules/ABOUT.md) | Source copy: bio, work history, education, skills, contact. |
-| [`mune.md`](.claude/rules/mune.md) | Source copy for the Mune project page. **Carries a publishing blocker.** |
+| [`vitne.md`](.claude/rules/vitne.md) | Source copy for the Vitne project page. **Carries a publishing blocker.** |
 | [`mobitech.md`](.claude/rules/mobitech.md) | Source copy for the Mobitech project page. **Carries a publishing blocker.** |
 | [`localflow.md`](.claude/rules/localflow.md) | Source copy for the LocalFlow project page, extracted from the internal doc in [`local-flow/`](.claude/rules/local-flow/). |
 | [`brand.md`](.claude/rules/brand.md) | Design system: palette, type, layout, motion. Explicitly a proposal Fredrik can overrule. |
 | [`build.md`](.claude/rules/build.md) | Architecture: stack, content model, rendering, definition of done. |
-| [`tov.md`](.claude/rules/tov.md) | Tone of voice: hard bans, banned vocabulary, and Mune claim boundaries. |
+| [`tov.md`](.claude/rules/tov.md) | Tone of voice: hard bans, banned vocabulary, and Vitne claim boundaries. |
 
 Three of these are not style guidance and are not negotiable by an agent:
 
-- **`mune.md`** blocks any zero-data-retention wording until the agreement with Anthropic is signed.
+- **`vitne.md`** blocks any zero-data-retention wording until the agreement with Anthropic is signed.
 - **`mobitech.md`** blocks the detail page until client permission is confirmed. Fallback is a card and a link.
-- **`tov.md`** sets legal and reputational claim boundaries for Mune (no therapeutic claims, no AI-empathy claims, no superlatives, no named competitors).
+- **`tov.md`** sets legal and reputational claim boundaries for Vitne (no therapeutic claims, no AI-empathy claims, no superlatives, no named competitors).
 
 The copy in these files is the input to Sanity, entered verbatim. **Do not write, paraphrase, or summarize portfolio copy** — `tov.md`'s first rule is that you are not writing. Unresolved `[CONFIRM: ...]` markers are questions for Fredrik; leave them rather than inventing an answer. The `## Claim check` / `## Permission check` / `## Do not publish` sections are instructions to him, never content, and must never reach Sanity or the site.
 

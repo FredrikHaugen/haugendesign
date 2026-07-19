@@ -2,7 +2,7 @@
 
 The primary rule of this file: **you are not writing.**
 
-All copy for this site is supplied in `.claude/rules/` — `ABOUT.md`, `mune.md`, `mobitech.md`. Your job is to place it, not to produce it. If a slot needs a word and those files don't have one, use the plainest available label ("Work", "About", "Contact") or leave `{/* TODO: copy needed */}`. Every invented sentence is a bug, not a contribution.
+All copy for this site is supplied in `.claude/rules/` — `ABOUT.md`, `vitne.md`, `mobitech.md`. Your job is to place it, not to produce it. If a slot needs a word and those files don't have one, use the plainest available label ("Work", "About", "Contact") or leave `{/* TODO: copy needed */}`. Every invented sentence is a bug, not a contribution.
 
 This rule exists because the site owner writes for a living, has a documented voice, and has already rejected one version of this site for sounding generated. The generated version said "builder of digital calm" and "crafting emotionally intelligent technology that feels alive." Nothing in that register ships.
 
@@ -42,11 +42,11 @@ These are the site owner's actual moves. They appear in supplied copy. Do not st
 - **Sentence fragments.** Deliberate. Leave them.
 - **Ending on something compressed.** Never end a section on a CTA.
 
-## Claim boundaries: Mune
+## Claim boundaries: Vitne
 
-Mune is an encrypted mental-health-adjacent product. These boundaries are legal and reputational, not stylistic. Violating them on a portfolio is worse than violating them in the product, because the portfolio is where he claims to be the person who gets this right.
+Vitne is an encrypted mental-health-adjacent product. These boundaries are legal and reputational, not stylistic. Violating them on a portfolio is worse than violating them in the product, because the portfolio is where he claims to be the person who gets this right.
 
-Only the exact sentences in `.claude/rules/mune.md` may appear anywhere on this site. Do not summarize Mune. Do not paraphrase Mune. Do not write a shorter version of the Mune paragraph to fit a card.
+Only the exact sentences in `.claude/rules/vitne.md` may appear anywhere on this site. Do not summarize Vitne. Do not paraphrase Vitne. Do not write a shorter version of the Vitne paragraph to fit a card.
 
 **Never, under any phrasing:**
 
@@ -56,7 +56,7 @@ Only the exact sentences in `.claude/rules/mune.md` may appear anywhere on this 
 - "100% secure" · "completely private" · "your data never leaves your device" (it does leave, encrypted)
 - "The only" or "the first" or "the best" — superlatives without evidence
 - Any comparison to Day One, Rosebud, Replika, or any named competitor
-- "Zero data retention" or "zero-data-retention agreement" unless `.claude/rules/mune.md` contains that exact phrase. If it doesn't, the agreement isn't signed and the claim is false. As of this writing it does not — that file blocks the claim explicitly.
+- "Zero data retention" or "zero-data-retention agreement" unless `.claude/rules/vitne.md` contains that exact phrase. If it doesn't, the agreement isn't signed and the claim is false. As of this writing it does not — that file blocks the claim explicitly.
 - The word "Eir"
 
 **Safe:** end-to-end encrypted · encrypted on your device before it leaves it · the server can't read it · free at the core, paid for what scales

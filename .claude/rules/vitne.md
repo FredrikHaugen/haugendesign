@@ -1,4 +1,4 @@
-# Mune
+# Vitne
 
 > Portfolio copy for haugendesign.no. Extracted from the internal `MUNE.md`. Nothing here may be rewritten or expanded by a coding agent.
 >
@@ -6,28 +6,28 @@
 
 ## Slug
 
-`mune`
+`vitne`
 
 ## Card
 
-**Mune**
+**Vitne**
 An end-to-end encrypted app for thinking out loud. Chat, and a journal attached to it. The server holds a blob it can't read.
 
 Tags: `Next.js 16` `TypeScript` `Supabase` `Clerk` `Claude API` `Web Crypto` `Turborepo` `Expo`
 
-Link: https://mune.so
+Link: https://vitne.so
 
 ## Accounts
 
-The product's own social accounts. These render on the Mune detail page, framed as Mune's, never in the site's personal Contact section.
+The product's own social accounts. These render on the Vitne detail page, framed as Vitne's, never in the site's personal Contact section.
 
-Instagram: https://www.instagram.com/mune.so
-Threads: https://www.threads.com/@mune.so
-X: https://x.com/mune_so
+Instagram: https://www.instagram.com/vitne.so
+Threads: https://www.threads.com/@vitne.so
+X: https://x.com/vitneApp
 
 ## Detail page
 
-Mune is a chat-first, end-to-end encrypted app for private reflection, with an encrypted journal attached. You talk to an AI that has no name, no persona, and no character. It listens, asks one question at a time or none, and stops. It does not perform empathy at you.
+Vitne is a chat-first, end-to-end encrypted app for private reflection, with an encrypted journal attached. You talk to an AI that has no name, no persona, and no character. It listens, asks one question at a time or none, and stops. It does not perform empathy at you.
 
 I built it because I kept writing things in Apple Notes at 2am and deleting them before morning.
 

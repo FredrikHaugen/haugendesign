@@ -2,11 +2,11 @@
 
 > Fullstack developer. Oslo. Currently building an encrypted app nobody asked me to build.
 
-I build things that hold private thoughts. Right now that's Mune, an encrypted chat and journal app I've been working on since the start of 2025. Before that I spent four years designing and shipping client websites under my own name.
+I build things that hold private thoughts. Right now that's Vitne, an encrypted chat and journal app I've been working on since the start of 2026. Before that I spent four years designing and shipping client websites under my own name.
 
 ## Work
 
-- [Mune](https://haugendesign.no/work/mune): An end-to-end encrypted app for thinking out loud. Chat, and a journal attached to it. The server holds a blob it can't read. Live at https://mune.so
+- [Vitne](https://haugendesign.no/work/vitne): An end-to-end encrypted app for thinking out loud. Chat, and a journal attached to it. The server holds a blob it can't read. Live at https://vitne.so
 - [LocalFlow](https://haugendesign.no/work/localflow): Fully-local voice dictation for macOS. Hold a hotkey anywhere, speak, release. Clean, formatted text appears in whatever app you're using. No cloud, no accounts, no telemetry. Source at https://github.com/FredrikHaugen/whispr-local
 - [Mobitech](https://www.mobitech.no): The public site for a Norwegian maritime software company. Design through deployment, plus the CMS their staff edit it with.
 

@@ -4,12 +4,12 @@
 
 ## The governing constraint
 
-**This site is not Mune.** A visitor who has seen mune.so must not think this is a Mune subpage. That rules out:
+**This site is not Vitne.** A visitor who has seen vitne.so must not think this is a Vitne subpage. That rules out:
 
-- The Mune palette: `#8963BA` brand-purple, `#F5A87C` brand-gold, `#1f2937` brand-graphite. Never appear here.
-- Dark-mode-only. Mune is dark-only as a brand-defining choice. This site is light.
-- The Mune type triangle: Noto Serif, Noto Sans, Geist Mono. Different fonts here.
-- The locked-box metaphor, the "blob" vocabulary, the Mune motion system.
+- The Vitne palette: `#8963BA` brand-purple, `#F5A87C` brand-gold, `#1f2937` brand-graphite. Never appear here.
+- Dark-mode-only. Vitne is dark-only as a brand-defining choice. This site is light.
+- The Vitne type triangle: Noto Serif, Noto Sans, Geist Mono. Different fonts here.
+- The locked-box metaphor, the "blob" vocabulary, the Vitne motion system.
 
 ## The direction
 
@@ -84,7 +84,7 @@ Subtle, not cinematic. Fredrik overruled the original almost-none proposal in Ju
 - A second icon set. Icons come from `@phosphor-icons/react` (Fredrik's July 2026 call, replacing the old three-inline-SVGs rule), imported from `dist/ssr`, small, `aria-hidden`, always beside a text label. No icon-only buttons.
 - A contact form. It's a mailto link.
 - Testimonial sections, "as seen in," logo walls
-- A blog. He has one, it's at mune.so/notes.
+- A blog. He has one, it's at vitne.so/notes.
 - Cookie banners. There's nothing to consent to. If analytics ship at all, it's Pirsch, cookieless, one script tag.
 - Dark mode toggle. Pick light and commit.
 

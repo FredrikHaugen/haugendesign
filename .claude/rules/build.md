@@ -28,11 +28,11 @@ studio/schemaTypes/
 A project document carries:
 
 ```
-slug        mune
-title       Mune
+slug        vitne
+title       Vitne
 card        One or two lines. Verbatim from the rules file. Never regenerated to fit.
 tags        [Next.js 16, TypeScript, Supabase, Clerk, Claude API, Web Crypto]
-url         https://mune.so
+url         https://vitne.so
 year        From the rules file. Mobitech's is still an unresolved CONFIRM.
 ```
 
@@ -42,13 +42,13 @@ Run `npx sanity schema deploy` in `studio/` after any schema change, or editor a
 
 ## Where the copy comes from
 
-The source copy is `.claude/rules/ABOUT.md`, `.claude/rules/mune.md`, and `.claude/rules/mobitech.md`. Those files are the input to Sanity, not the output of it. Copy is entered into the Studio verbatim.
+The source copy is `.claude/rules/ABOUT.md`, `.claude/rules/vitne.md`, and `.claude/rules/mobitech.md`. Those files are the input to Sanity, not the output of it. Copy is entered into the Studio verbatim.
 
 Their `## Claim check`, `## Permission check`, and `## Do not publish` sections are instructions to the site owner. They are not content. They stay in `.claude/rules/` and are never entered into Sanity. They must never render.
 
 Two of them are publishing blockers, not suggestions. Neither project ships until its blocker clears:
 
-- `mune.md` — the zero-data-retention wording waits on a signed agreement.
+- `vitne.md` — the zero-data-retention wording waits on a signed agreement.
 - `mobitech.md` — the detail page waits on client permission.
 
 ## Rendering

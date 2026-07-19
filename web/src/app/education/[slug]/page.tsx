@@ -8,6 +8,7 @@ import {
 } from "@/sanity/queries";
 import { CredentialDetail } from "@/components/CredentialDetail";
 import { JsonLd } from "@/components/JsonLd";
+import { blockText, clampSentences, OG_FALLBACK_IMAGE } from "@/lib/seo";
 import { OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const options = { next: { revalidate: 3600 } };
@@ -26,7 +27,11 @@ export async function generateMetadata({
   const entry = await client.fetch<EducationDetail | null>(EDUCATION_QUERY, { slug }, options);
   if (!entry) return {};
   const title = [entry.degree, entry.institution].filter(Boolean).join(", ");
-  const description = [entry.institution, entry.years].filter(Boolean).join(" · ");
+  // Prefer the program paragraph over the bare "Institution · years" line;
+  // clampSentences keeps whole verbatim sentences within snippet length.
+  const source =
+    blockText(entry.detail?.[0]) ?? [entry.institution, entry.years].filter(Boolean).join(" · ");
+  const description = clampSentences(source);
   return {
     title,
     description,
@@ -37,6 +42,7 @@ export async function generateMetadata({
       siteName: SITE_NAME,
       title,
       description,
+      images: [OG_FALLBACK_IMAGE],
     },
     twitter: { card: "summary", title, description },
   };

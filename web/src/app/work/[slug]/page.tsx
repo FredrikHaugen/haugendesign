@@ -16,6 +16,7 @@ import { LogoMark } from "@/components/LogoMark";
 import { PortableTextBody } from "@/components/PortableTextBody";
 import { projectMedia, projectOgImage } from "@/components/projectMedia";
 import { Reveal } from "@/components/Reveal";
+import { clampSentences, OG_FALLBACK_IMAGE } from "@/lib/seo";
 import { OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const options = { next: { revalidate: 3600 } };
@@ -34,22 +35,23 @@ export async function generateMetadata({
   const project = await client.fetch<ProjectDetail | null>(PROJECT_QUERY, { slug }, options);
   if (!project) return {};
   const og = projectOgImage[slug];
+  const description = clampSentences(project.card);
   return {
     title: project.title,
-    description: project.card,
+    description,
     alternates: { canonical: `/work/${slug}` },
     openGraph: {
       type: "website",
       url: `/work/${slug}`,
       siteName: SITE_NAME,
       title: project.title,
-      description: project.card,
-      images: og ? [{ url: og.url, width: 1200, height: 630, alt: og.alt }] : undefined,
+      description,
+      images: og ? [{ url: og.url, width: 1200, height: 630, alt: og.alt }] : [OG_FALLBACK_IMAGE],
     },
     twitter: {
       card: og ? "summary_large_image" : "summary",
       title: project.title,
-      description: project.card,
+      description,
       images: og ? [og.url] : undefined,
     },
   };

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
+import { OG_FALLBACK_IMAGE } from "@/lib/seo";
 import { OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -36,20 +37,13 @@ export const metadata: Metadata = {
     title: OWNER_NAME,
     description,
     locale: "en_US",
-    images: [
-      {
-        url: "/og/home.jpg",
-        width: 1200,
-        height: 630,
-        alt: "The haugendesign logo mark.",
-      },
-    ],
+    images: [OG_FALLBACK_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: OWNER_NAME,
     description,
-    images: ["/og/home.jpg"],
+    images: [OG_FALLBACK_IMAGE.url],
   },
 };
 

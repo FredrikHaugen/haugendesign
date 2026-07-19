@@ -60,6 +60,15 @@ export const DETAIL_SLUGS_QUERY = defineQuery(
   `*[_type == "project" && defined(slug.current) && count(coalesce(detail, [])) > 0].slug.current`
 );
 
+export const SITEMAP_PROJECTS_QUERY = defineQuery(
+  `*[_type == "project" && defined(slug.current) && count(coalesce(detail, [])) > 0]{
+    "slug": slug.current,
+    _updatedAt
+  }`
+);
+
+export const ABOUT_UPDATED_QUERY = defineQuery(`*[_type == "about"][0]._updatedAt`);
+
 export const EXPERIENCE_QUERY = defineQuery(
   `*[_type == "about"][0].work[slug.current == $slug && count(coalesce(detail, [])) > 0][0]{
     role, org, location, dates, description, url, detail
@@ -79,6 +88,11 @@ export const EDUCATION_QUERY = defineQuery(
 export const EDUCATION_SLUGS_QUERY = defineQuery(
   `*[_type == "about"][0].education[defined(slug.current) && count(coalesce(detail, [])) > 0].slug.current`
 );
+
+export interface SitemapProject {
+  slug: string;
+  _updatedAt: string;
+}
 
 export interface WorkEntry {
   _key: string;

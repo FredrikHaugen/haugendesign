@@ -8,6 +8,7 @@ import {
 } from "@/sanity/queries";
 import { CredentialDetail } from "@/components/CredentialDetail";
 import { JsonLd } from "@/components/JsonLd";
+import { blockText, clampSentences, OG_FALLBACK_IMAGE } from "@/lib/seo";
 import { OWNER_NAME, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const options = { next: { revalidate: 3600 } };
@@ -26,18 +27,23 @@ export async function generateMetadata({
   const entry = await client.fetch<ExperienceDetail | null>(EXPERIENCE_QUERY, { slug }, options);
   if (!entry) return {};
   const title = [entry.role, entry.org].filter(Boolean).join(", ");
+  // Prefer the detail body's opening paragraph: fuller verbatim copy than the
+  // one-line credential description.
+  const source = blockText(entry.detail?.[0]) ?? entry.description;
+  const description = source ? clampSentences(source) : undefined;
   return {
     title,
-    description: entry.description,
+    description,
     alternates: { canonical: `/experience/${slug}` },
     openGraph: {
       type: "website",
       url: `/experience/${slug}`,
       siteName: SITE_NAME,
       title,
-      description: entry.description ?? undefined,
+      description,
+      images: [OG_FALLBACK_IMAGE],
     },
-    twitter: { card: "summary", title, description: entry.description ?? undefined },
+    twitter: { card: "summary", title, description },
   };
 }
 
